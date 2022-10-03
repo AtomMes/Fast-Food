@@ -13,7 +13,7 @@ const Banner = () => {
         alignItems: "center",
       }}
     >
-      <Typography color="white">
+      <Typography sx={{color:'white'}}>
         We're open and available for takeaway & delivery. Order Now
       </Typography>
     </Box>

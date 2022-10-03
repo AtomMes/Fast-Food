@@ -7,8 +7,11 @@ import {
   styled,
   Menu,
   MenuItem,
+  Stack,
+  Drawer,
+  Typography,
+  Badge,
 } from "@mui/material";
-import { Stack } from "@mui/system";
 import MainLogo from "../images/5e865e09d8efa341ab76b5e7_Logo";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -16,6 +19,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 export const Navbar = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
 
   const open = Boolean(anchorEl);
 
@@ -32,6 +36,13 @@ export const Navbar = () => {
       position="static"
       sx={{ backgroundColor: "transparent", width: "100%" }}
     >
+      <Box
+          sx={{
+            width: "100%",
+            maxWidth: "1200px",
+            margin: "0 auto",
+          }}
+        >
       <Toolbar
         sx={{
           display: "flex",
@@ -56,11 +67,11 @@ export const Navbar = () => {
               display: { xs: "none", sm: "flex" },
             }}
           >
-            <Button sx={{ color: "gray" }}>Home</Button>
-            <Button sx={{ color: "gray" }}>Order</Button>
-            <Button sx={{ color: "gray" }}>Company</Button>
-            <Button sx={{ color: "gray" }}>FAQ</Button>
-            <Button sx={{ color: "gray" }}>CONTACT</Button>
+            <Button sx={{ color: "gray", fontWeight: "400" }}>Home</Button>
+            <Button sx={{ color: "gray", fontWeight: "400" }}>Order</Button>
+            <Button sx={{ color: "gray", fontWeight: "400" }}>Company</Button>
+            <Button sx={{ color: "gray", fontWeight: "400" }}>FAQ</Button>
+            <Button sx={{ color: "gray", fontWeight: "400" }}>CONTACT</Button>
           </Box>
 
           <Box
@@ -110,21 +121,34 @@ export const Navbar = () => {
               </MenuItem>
             </Menu>
           </Box>
-
-          <Button>
-            <ShoppingCartIcon
-              sx={{
-                bgcolor: "#35b8be",
-                width: "40px",
-                height: "40px",
-                padding: "11px",
-                borderRadius: "8px",
-                color: "white",
-              }}
-            />
+          <Button onClick={() => setIsDrawerOpen(true)}>
+            <Badge badgeContent={0} showZero color='w'>
+              <ShoppingCartIcon
+                color="w"
+                sx={{
+                  bgcolor: "#35b8be",
+                  width: "55px",
+                  height: "55px",
+                  padding: "18px",
+                  borderRadius: "8px",
+                }}
+              />
+            </Badge>
           </Button>
         </Stack>
       </Toolbar>
+      <Drawer
+        anchor="right"
+        open={isDrawerOpen}
+        onClose={() => setIsDrawerOpen(false)}
+      >
+        <Box p={2} width="300px" textAlign="center" role="presentation">
+          <Typography variant="h6" component="div">
+            Cart
+          </Typography>
+        </Box>
+      </Drawer>
+      </Box>
     </Box>
   );
 };
