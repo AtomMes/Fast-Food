@@ -15,7 +15,6 @@ import {
 import MainLogo from "../images/5e865e09d8efa341ab76b5e7_Logo";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 export const Navbar = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);

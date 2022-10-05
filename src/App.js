@@ -4,6 +4,9 @@ import Navbar from "./components/Navbar";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Box } from "@mui/material";
 import Header from "./components/Header";
+import Menu from "./components/Menu";
+import Content from "./components/Content";
+import Footer from "./components/Footer";
 
 export const theme = createTheme({
   palette: {
@@ -13,6 +16,9 @@ export const theme = createTheme({
     w: {
       main: "#ffffff",
     },
+    b:{
+      main:'#000'
+    }
   },
 });
 
@@ -23,6 +29,9 @@ function App() {
         <Banner />
         <Navbar />
         <Header />
+        <Menu />
+        <Content />
+        <Footer />
       </div>
     </ThemeProvider>
   );
