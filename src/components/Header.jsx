@@ -1,7 +1,7 @@
 import React from "react";
-import { Box, Typography, styled } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
-const Header = () => {
+const Header = ({ text1, text2, text3 }) => {
   return (
     <Box
       minHeight={420}
@@ -13,13 +13,11 @@ const Header = () => {
       }}
     >
       <Box
-        sx={{
-          width: "100%",
-          maxWidth: "1200px",
-          display: "flex",
-          justifyContent: "center",
-          textAlign: "center",
-        }}
+        display="flex"
+        justifyContent="center"
+        textAlign="center"
+        w="100%"
+        maxWidth="1200px"
       >
         <Typography
           variant="h2"
@@ -29,20 +27,11 @@ const Header = () => {
             maxWidth: "700px",
           }}
         >
-          Get your food{" "}
-          <Typography
-            variant="h2"
-            sx={{ fontWeight: "700", color: "#35b8be", display: "inline" }}
-          >
-            delivered,{" "}
-          </Typography>
-          <Typography
-            variant="h2"
-            sx={{ fontWeight: "700", color: "#35b8be", display: "inline" }}
-          >
-            or pick-up in{" "}
-          </Typography>
-          store .
+          {text1 && text1}
+          <Box sx={{ color: "#35b8be", display: "inline" }}>
+            {text2 && text2}
+          </Box>
+          {text3 && text3}
         </Typography>
       </Box>
     </Box>

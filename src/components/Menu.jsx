@@ -30,7 +30,7 @@ const Menu = () => {
     setButtons(
       buttons.map((button) => {
         if (id === button.id) {
-          return { ...button, isSelected: true};
+          return { ...button, isSelected: true };
         } else {
           return { ...button, isSelected: false };
         }
@@ -42,14 +42,14 @@ const Menu = () => {
     <Box
       sx={{
         display: "flex",
-        flexWrap:{xs:'wrap',sm:'nowrap'},
+        flexWrap: { xs: "wrap", sm: "nowrap" },
         alignItems: "center",
         justifyContent: "center",
         gap: "10px",
-        padding:'120px 0px',
+        padding: "120px 0px",
         width: "100%",
         maxWidth: "1200px",
-        margin:'0 auto'
+        margin: "0 auto",
       }}
     >
       {buttons.map((button) => (
@@ -60,7 +60,7 @@ const Menu = () => {
           sx={{
             color: button.isSelected ? "white" : "black",
             backgroundColor: button.isSelected && "#35b8be",
-            width:{xs:'40%', sm:'20%'},
+            width: { xs: "40%", sm: "20%" },
             fontWeight: "400",
             padding: "9px 45px",
             margin: "15px",
@@ -68,7 +68,7 @@ const Menu = () => {
             "&:hover": {
               backgroundColor: button.isSelected && "#1a9da3",
             },
-            whiteSpace:"nowrap"
+            whiteSpace: "nowrap",
           }}
           value={button.name}
           onClick={() => handleClick(button.id)}

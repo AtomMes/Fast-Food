@@ -2,11 +2,8 @@ import "./App.css";
 import Banner from "./components/Banner";
 import Navbar from "./components/Navbar";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Box } from "@mui/material";
-import Header from "./components/Header";
-import Menu from "./components/Menu";
-import Content from "./components/Content";
 import Footer from "./components/Footer";
+import Order from "./pages/Order";
 
 export const theme = createTheme({
   palette: {
@@ -28,9 +25,8 @@ function App() {
       <div className="App">
         <Banner />
         <Navbar />
-        <Header />
-        <Menu />
-        <Content />
+        {/* <Order /> */}
+        
         <Footer />
       </div>
     </ThemeProvider>
