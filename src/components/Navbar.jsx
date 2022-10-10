@@ -17,6 +17,7 @@ import MainLogo from "../images/5e865e09d8efa341ab76b5e7_Logo";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Close, FoodBank } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 const f = [1, 1, 1, 1];
 
@@ -35,10 +36,7 @@ export const Navbar = ({ theme }) => {
   };
 
   return (
-    <Box
-      position="static"
-      sx={{ backgroundColor: "transparent", width: "100%" }}
-    >
+    <Box position="static" sx={{ backgroundColor: "white", width: "100%" }}>
       <Box
         sx={{
           width: "100%",
@@ -71,8 +69,14 @@ export const Navbar = ({ theme }) => {
               }}
             >
               <Button sx={{ color: "gray", fontWeight: "400" }}>Home</Button>
-              <Button sx={{ color: "gray", fontWeight: "400" }}>Order</Button>
-              <Button sx={{ color: "gray", fontWeight: "400" }}>Company</Button>
+              <Link to="/order" style={{ textDecoration: "none" }}>
+                <Button sx={{ color: "gray", fontWeight: "400" }}>Order</Button>
+              </Link>
+              <Link to="company" style={{ textDecoration: "none" }}>
+                <Button sx={{ color: "gray", fontWeight: "400" }}>
+                  Company
+                </Button>
+              </Link>
               <Button sx={{ color: "gray", fontWeight: "400" }}>FAQ</Button>
               <Button sx={{ color: "gray", fontWeight: "400" }}>CONTACT</Button>
             </Box>
@@ -156,16 +160,21 @@ export const Navbar = ({ theme }) => {
               justifyContent="space-between"
               alignItems="center"
               borderBottom="1px solid grey"
-              padding={3} 
+              padding={3}
             >
               <Typography variant="h4" sx={{ fontWeight: "bold" }}>
                 Your Order
               </Typography>
               <Close onClick={() => setIsDrawerOpen(false)} cursor="pointer" />
             </Box>
-            <Box flex="1" padding={2} sx={{overflow:'auto'}} >
+            <Box flex="1" padding={2} sx={{ overflow: "auto" }}>
               {f.map((ff, i) => (
-                <Box display="flex" alignItems="center" key={i} borderBottom='1px solid rgb(220,220,220)' >
+                <Box
+                  display="flex"
+                  alignItems="center"
+                  key={i}
+                  borderBottom="1px solid rgb(220,220,220)"
+                >
                   <FoodBank sx={{ width: "90px", height: "auto" }} />
                   <Box flex="1">
                     <Typography>Name of the Food</Typography>
@@ -190,7 +199,7 @@ export const Navbar = ({ theme }) => {
               <Box
                 display="flex"
                 justifyContent="space-between"
-                marginBottom='15px'
+                marginBottom="15px"
               >
                 <Typography variant="h5">Subtotal</Typography>
                 <Typography variant="h5">$22.00 USD</Typography>

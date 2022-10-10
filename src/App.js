@@ -4,6 +4,8 @@ import Navbar from "./components/Navbar";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Footer from "./components/Footer";
 import Order from "./pages/Order";
+import Company from "./pages/Company";
+import { Routes, Route } from "react-router-dom";
 
 export const theme = createTheme({
   palette: {
@@ -13,9 +15,9 @@ export const theme = createTheme({
     w: {
       main: "#ffffff",
     },
-    b:{
-      main:'#000'
-    }
+    b: {
+      main: "#000",
+    },
   },
 });
 
@@ -25,8 +27,10 @@ function App() {
       <div className="App">
         <Banner />
         <Navbar />
-        {/* <Order /> */}
-        
+        <Routes>
+          <Route path="/order" element={<Order />} />
+          <Route path="/company" element={<Company />} />
+        </Routes>
         <Footer />
       </div>
     </ThemeProvider>
