@@ -1,30 +1,26 @@
+import { Box } from "@mui/material";
 import React from "react";
-import Content from "../components/Content";
-import Header from "../components/Header";
 import Buttons from "../components/Buttons";
+import Header from "../components/Header";
+import Questions from "../components/Questions";
 
-const Order = () => {
+const FAQ = () => {
   const [buttons, setButtons] = React.useState([
     {
-      name: "Full Menu",
+      name: "Our Food",
       id: 1,
       isSelected: false,
     },
     {
-      name: "Burgers",
+      name: "Our Delivery",
       id: 2,
       isSelected: false,
     },
     {
-      name: "Sides",
+      name: "Our company",
       id: 3,
       isSelected: false,
-    },
-    {
-      name: "Drinks",
-      id: 4,
-      isSelected: false,
-    },
+    }
   ]);
 
   const handleClick = (id) => {
@@ -40,19 +36,12 @@ const Order = () => {
   };
 
   return (
-    <>
-      <Header
-        text1="Get your food "
-        text2="delivered, or pick-up in "
-        text3="store ."
-      />
-      <Buttons
-        buttons={buttons}
-        setButtons={setButtons}
-        handleClick={handleClick}
-      />
-      <Content />
-    </>
+    <Box>
+      <Header text1="Frequently Asked " text2="Questions" />
+      <Buttons buttons={buttons} handleClick={handleClick} setButtons={setButtons} />
+      <Questions />
+    </Box>
   );
 };
-export default Order;
+
+export default FAQ;

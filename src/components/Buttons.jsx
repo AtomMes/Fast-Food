@@ -2,42 +2,8 @@ import { Box, Button } from "@mui/material";
 import { useTheme } from "@mui/material";
 import React from "react";
 
-const Menu = () => {
-  const [buttons, setButtons] = React.useState([
-    {
-      name: "Full Menu",
-      id: 1,
-      isSelected: false,
-    },
-    {
-      name: "Burgers",
-      id: 2,
-      isSelected: false,
-    },
-    {
-      name: "Sides",
-      id: 3,
-      isSelected: false,
-    },
-    {
-      name: "Drinks",
-      id: 4,
-      isSelected: false,
-    },
-  ]);
-
-  const handleClick = (id) => {
-    setButtons(
-      buttons.map((button) => {
-        if (id === button.id) {
-          return { ...button, isSelected: true };
-        } else {
-          return { ...button, isSelected: false };
-        }
-      })
-    );
-  };
-
+const Buttons = ({buttons, setButtons, handleClick}) => {
+ 
   return (
     <Box
       sx={{
@@ -80,4 +46,4 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+export default Buttons;

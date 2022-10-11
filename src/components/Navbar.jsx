@@ -77,7 +77,9 @@ export const Navbar = ({ theme }) => {
                   Company
                 </Button>
               </Link>
-              <Button sx={{ color: "gray", fontWeight: "400" }}>FAQ</Button>
+              <Link to="faq" style={{ textDecoration: "none" }}>
+                <Button sx={{ color: "gray", fontWeight: "400" }}>FAQ</Button>
+              </Link>
               <Button sx={{ color: "gray", fontWeight: "400" }}>CONTACT</Button>
             </Box>
 

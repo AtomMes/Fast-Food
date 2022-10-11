@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Order from "./pages/Order";
 import Company from "./pages/Company";
 import { Routes, Route } from "react-router-dom";
+import FAQ from "./pages/FAQ";
 
 export const theme = createTheme({
   palette: {
@@ -30,6 +31,7 @@ function App() {
         <Routes>
           <Route path="/order" element={<Order />} />
           <Route path="/company" element={<Company />} />
+          <Route path="/faq" element={<FAQ />} />
         </Routes>
         <Footer />
       </div>
