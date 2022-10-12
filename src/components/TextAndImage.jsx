@@ -1,9 +1,16 @@
 import { Box, Stack, Typography, Button } from "@mui/material";
 import React from "react";
 
-const TextAndImage = ({ header, subtitle, button, image, reverse }) => {
+const TextAndImage = ({
+  header,
+  subtitle,
+  button,
+  image,
+  reverse,
+  bgcolor,
+}) => {
   return (
-    <Box sx={{ bgcolor: "white" }}>
+    <Box sx={{ bgcolor: bgcolor ? bgcolor : "white" }}>
       <Box
         sx={{ display: "flex", flexDirection: { xs: "column", md: "row" } }}
         alignItems="center"
@@ -12,7 +19,7 @@ const TextAndImage = ({ header, subtitle, button, image, reverse }) => {
         margin="0 auto"
         justifyContent="space-between"
         minHeight="770px"
-        padding='30px'
+        padding="30px"
       >
         {reverse && (
           <Box
@@ -25,11 +32,11 @@ const TextAndImage = ({ header, subtitle, button, image, reverse }) => {
           </Box>
         )}
         <Stack
-          width="40%"
+          width="55%"
           display="flex"
           justifyContent="center"
-          sx={{ alignItems: { xs: "center", md: "start" }}}
-          marginBottom='30px'
+          sx={{ alignItems: { xs: "center", md: "start" } }}
+          marginBottom="30px"
         >
           <Typography
             color="primary"
@@ -60,6 +67,7 @@ const TextAndImage = ({ header, subtitle, button, image, reverse }) => {
                 backgroundColor: "#1a9da3",
               },
               whiteSpace: "nowrap",
+              textTransform:'capitalize',
             }}
           >
             {button}

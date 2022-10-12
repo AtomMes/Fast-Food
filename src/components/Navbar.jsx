@@ -14,9 +14,10 @@ import {
   TextField,
 } from "@mui/material";
 import MainLogo from "../images/5e865e09d8efa341ab76b5e7_Logo";
+import LunchDiningIcon from '@mui/icons-material/LunchDining';
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Close, FoodBank } from "@mui/icons-material";
+import { Close} from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
 const f = [1, 1, 1, 1];
@@ -68,7 +69,10 @@ export const Navbar = ({ theme }) => {
                 display: { xs: "none", sm: "flex" },
               }}
             >
+              
+              <Link to="/" style={{ textDecoration: "none" }}>
               <Button sx={{ color: "gray", fontWeight: "400" }}>Home</Button>
+              </Link>
               <Link to="/order" style={{ textDecoration: "none" }}>
                 <Button sx={{ color: "gray", fontWeight: "400" }}>Order</Button>
               </Link>
@@ -177,7 +181,7 @@ export const Navbar = ({ theme }) => {
                   key={i}
                   borderBottom="1px solid rgb(220,220,220)"
                 >
-                  <FoodBank sx={{ width: "90px", height: "auto" }} />
+                  <LunchDiningIcon sx={{ width: "90px", height: "auto" }} />
                   <Box flex="1">
                     <Typography>Name of the Food</Typography>
                     <Typography>$ 4.00 USD</Typography>

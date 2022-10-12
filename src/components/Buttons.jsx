@@ -2,8 +2,7 @@ import { Box, Button } from "@mui/material";
 import { useTheme } from "@mui/material";
 import React from "react";
 
-const Buttons = ({buttons, setButtons, handleClick}) => {
- 
+const Buttons = ({ buttons, setButtons, handleClick }) => {
   return (
     <Box
       sx={{
@@ -14,7 +13,9 @@ const Buttons = ({buttons, setButtons, handleClick}) => {
         gap: "10px",
         padding: "120px 0px",
         width: "100%",
-        maxWidth: "1200px",
+
+          maxWidth: "1200px",
+
         margin: "0 auto",
       }}
     >
@@ -24,6 +25,7 @@ const Buttons = ({buttons, setButtons, handleClick}) => {
           variant={!button.isSelected && "outlined"}
           color="b"
           sx={{
+            textTransform: "capitalize",
             color: button.isSelected ? "white" : "black",
             backgroundColor: button.isSelected && "#35b8be",
             width: { xs: "40%", sm: "20%" },

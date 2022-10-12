@@ -12,7 +12,14 @@ const Footer = () => {
         paddingTop: "100px",
       }}
     >
-      <Box sx={{ maxWidth: "1200px", margin: "0 auto" }}>
+      <Box
+        sx={{
+          sm: {
+            maxWidth: "1200px",
+          },
+          margin: "0 auto",
+        }}
+      >
         <Box
           sx={{
             display: { xs: "block", md: "flex" },
@@ -107,7 +114,7 @@ const Footer = () => {
                 <Button color="b">FlowBase</Button>
               </Typography>
               <Typography sx={{ fontWeight: "400", marginBottom: "20px" }}>
-               <Button color="b"> More Cloneables</Button>
+                <Button color="b"> More Cloneables</Button>
               </Typography>
             </Box>
           </Box>

@@ -1,9 +1,10 @@
-import { FoodBank } from "@mui/icons-material";
+import LunchDiningIcon from "@mui/icons-material/LunchDining";
 import { Box, Button, TextField, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import React from "react";
 
-const Content = () => {
+const Content = ({ button }) => {
   const f = [1, 1, 1, 1, 1, 1, 1, 1];
 
   return (
@@ -12,13 +13,14 @@ const Content = () => {
         display: "flex",
         flexWrap: "wrap",
         width: "100%",
+
         maxWidth: "1200px",
         justifyContent: "space-between",
         margin: "50px auto",
       }}
     >
       {f.map((f, i) => (
-        <Box 
+        <Box
           key={i}
           sx={{
             display: "flex",
@@ -34,7 +36,7 @@ const Content = () => {
             },
           }}
         >
-          <FoodBank sx={{ width: "130px", height: "auto" }} />
+          <LunchDiningIcon sx={{ width: "130px", height: "auto" }} />
           <Box
             sx={{
               width: "100%",
@@ -79,9 +81,9 @@ const Content = () => {
         variant="outlined"
         color="w"
         sx={{
+          textTransform: "capitalize",
           color: "w",
           backgroundColor: "#35b8be",
-          width: "10%",
           fontWeight: "400",
           minHeight: "52px",
           "&:hover": {
@@ -92,7 +94,13 @@ const Content = () => {
         }}
         endIcon={<KeyboardArrowRightIcon />}
       >
-        Next
+        {button ? (
+          <Link to="/order" style={{ textDecoration: "none", color: "white" }}>
+            {button}
+          </Link>
+        ) : (
+          "Next"
+        )}
       </Button>
     </Box>
   );
