@@ -2,10 +2,24 @@ import LunchDiningIcon from "@mui/icons-material/LunchDining";
 import { Box, Button, TextField, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import axios from "axios";
 import React from "react";
 
 const Content = ({ button }) => {
-  const f = [1, 1, 1, 1, 1, 1, 1, 1];
+
+  const [items, setItems] = React.useState([])
+
+
+  React.useEffect(() => {
+    const fetchData = async () => {
+      const { data } = await axios.get(
+        `https://62f5fe50612c13062b44104a.mockapi.io/items`
+      );
+      setItems(data);
+    };
+    fetchData();
+  }, []);
+  const f = [1,1,1,1,1,1]
 
   return (
     <Box
@@ -36,7 +50,13 @@ const Content = ({ button }) => {
             },
           }}
         >
-          <LunchDiningIcon sx={{ width: "130px", height: "auto" }} />
+          <LunchDiningIcon
+            sx={{
+              width: "130px",
+              height: "auto",
+              marginRight: { xs: "0", sm: "20px" },
+            }}
+          />
           <Box
             sx={{
               width: "100%",
@@ -70,7 +90,14 @@ const Content = ({ button }) => {
                 }}
                 type="number"
               />
-              <Button variant="contained" sx={{ color: "white" }}>
+              <Button
+                variant="contained"
+                sx={{
+                  color: "white",
+                  textTransform: "capitalize",
+                  whiteSpace: "nowrap",
+                }}
+              >
                 Add to cart
               </Button>
             </Box>

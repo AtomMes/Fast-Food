@@ -27,6 +27,7 @@ const TextAndImage = ({
             display="flex"
             justifyContent="center"
             alignItems="center"
+            className="animate__animated animate__fadeIn"
           >
             <img src={image} alt="food" width="100%" />
           </Box>
@@ -44,6 +45,7 @@ const TextAndImage = ({
             fontWeight="bold"
             sx={{ textAlign: { xs: "center", md: "start" } }}
             marginBottom="20px"
+            className="animate__animated animate__fadeIn"
           >
             {header}
           </Typography>
@@ -51,6 +53,7 @@ const TextAndImage = ({
             variant="body1"
             marginBottom="20px"
             sx={{ textAlign: { xs: "center", md: "start" } }}
+            className="animate__animated animate__fadeIn"
           >
             {subtitle}
           </Typography>
@@ -67,7 +70,7 @@ const TextAndImage = ({
                 backgroundColor: "#1a9da3",
               },
               whiteSpace: "nowrap",
-              textTransform:'capitalize',
+              textTransform: "capitalize",
             }}
           >
             {button}
@@ -79,6 +82,7 @@ const TextAndImage = ({
             display="flex"
             justifyContent="center"
             alignItems="center"
+            className="animate__animated animate__fadeIn"
           >
             <img src={image} alt="food" width="100%" />
           </Box>

@@ -18,6 +18,7 @@ const Header = ({ text1, text2, text3 }) => {
         textAlign="center"
         w="100%"
         maxWidth="1200px"
+        className="animate__animated animate__fadeInUp"
       >
         <Typography
           variant="h2"

@@ -21,7 +21,7 @@ const Home = () => {
 
   const header3 = `Order online with our simple checkout.`;
   const subtitle3 = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.`;
-  const button3 = `See out FAQ`;
+  const button3 = `See our FAQ`;
 
   const header4 = `Call our store and takeaway when it suits you best.`;
   const subtitle4 = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.`;
@@ -112,25 +112,56 @@ const Home = () => {
         button={button4}
         image={home4}
       />
-      <Box display="flex" justifyContent="space-around">
-        <Box component="img" alt="img" src={fixedImage} width="49%" />
+      <Box
+        display="flex"
+        justifyContent="space-around"
+        sx={{ flexDirection: { xs: "column", md: "row" } }}
+      >
         <Box
-          width="49%"
-          sx={{ bgcolor: "#35b8be" }}
+          component="img"
+          alt="img"
+          src={fixedImage}
+          sx={{
+            width: {
+              xs: "100%",
+              md: "49%",
+            },
+          }}
+        />
+        <Box
+          sx={{
+            bgcolor: "#35b8be",
+            width: {
+              xs: "100%",
+              md: "49%",
+            },
+          }}
           display="flex"
           flexDirection="column"
           alignItems="start"
           justifyContent="center"
           padding="50px"
         >
-          <Typography marginBottom="40px" sx={{color:'white'}} fontWeight='bold' variant="h2">
+          <Typography
+            marginBottom="40px"
+            sx={{ color: "white" }}
+            fontWeight="bold"
+            variant="h2"
+          >
             Support good food <br /> and local business
           </Typography>
           <Button
             color="w"
             size="large"
             variant="contained"
-            sx={{ color: "#35b8be", height: "60px", width: "150px",textTransform:'unset',fontWeight:'400', fontSize:'18px'}}
+            sx={{
+              color: "#35b8be",
+              height: "60px",
+              width: "150px",
+              textTransform: "unset",
+              fontWeight: "400",
+              fontSize: "18px",
+            }}
           >
             Order Now
           </Button>
