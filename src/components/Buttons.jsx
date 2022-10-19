@@ -13,9 +13,7 @@ const Buttons = ({ buttons, setButtons, handleClick }) => {
         gap: "10px",
         padding: "120px 0px",
         width: "100%",
-
-          maxWidth: "1200px",
-
+        maxWidth: "1200px",
         margin: "0 auto",
       }}
     >

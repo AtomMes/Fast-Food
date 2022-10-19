@@ -2,24 +2,25 @@ import LunchDiningIcon from "@mui/icons-material/LunchDining";
 import { Box, Button, TextField, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import { useDispatch, useSelector } from "react-redux";
+
 import axios from "axios";
 import React from "react";
+import { addToCart, setItems } from "../redux/itemsSlice";
 
 const Content = ({ button }) => {
-
-  const [items, setItems] = React.useState([])
-
+  const { items } = useSelector((state) => state.itemsSlice);
+  const dispatch = useDispatch();
 
   React.useEffect(() => {
     const fetchData = async () => {
       const { data } = await axios.get(
-        `https://62f5fe50612c13062b44104a.mockapi.io/items`
+        `https://634ef267df22c2af7b475a0f.mockapi.io/items`
       );
-      setItems(data);
+      dispatch(setItems(data));
     };
     fetchData();
   }, []);
-  const f = [1,1,1,1,1,1]
 
   return (
     <Box
@@ -33,9 +34,9 @@ const Content = ({ button }) => {
         margin: "50px auto",
       }}
     >
-      {f.map((f, i) => (
+      {items.map((item) => (
         <Box
-          key={i}
+          key={item.id}
           sx={{
             display: "flex",
             flexDirection: { xs: "column", sm: "row" },
@@ -50,12 +51,13 @@ const Content = ({ button }) => {
             },
           }}
         >
-          <LunchDiningIcon
-            sx={{
-              width: "130px",
-              height: "auto",
-              marginRight: { xs: "0", sm: "20px" },
-            }}
+          <Box
+            component="img"
+            src={item.imageUrl}
+            width="130px"
+            height="auto"
+            marginRight="25px"
+            borderRadius="10px"
           />
           <Box
             sx={{
@@ -73,23 +75,11 @@ const Content = ({ button }) => {
                 marginBottom: "9px",
               }}
             >
-              <Typography variant="h6">Burger Spicy</Typography>
-              <Typography color="primary">$9.12 USD</Typography>
+              <Typography variant="h6">{item.name}</Typography>
+              <Typography color="primary">$ {item.price}.00 USD</Typography>
             </Box>
-            <Typography>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,
-              reiciendis.
-            </Typography>
+            <Typography marginBottom="8px">{item.description}</Typography>
             <Box sx={{ display: "flex" }}>
-              <TextField
-                size="small"
-                variant="outlined"
-                sx={{
-                  width: "65px",
-                  marginRight: "10px",
-                }}
-                type="number"
-              />
               <Button
                 variant="contained"
                 sx={{
@@ -97,7 +87,23 @@ const Content = ({ button }) => {
                   textTransform: "capitalize",
                   whiteSpace: "nowrap",
                 }}
+                onClick={() => dispatch(addToCart(item.id))}
               >
+                {item.count > 0 && (
+                  <Box
+                    marginRight="10px"
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                    width="30px"
+                    height="30px"
+                    bgcolor="pink"
+                    borderRadius="50%"
+                    color="black"
+                  >
+                    {item.count}
+                  </Box>
+                )}
                 Add to cart
               </Button>
             </Box>

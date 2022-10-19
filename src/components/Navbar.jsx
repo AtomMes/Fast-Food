@@ -14,16 +14,18 @@ import {
   TextField,
 } from "@mui/material";
 import MainLogo from "../images/5e865e09d8efa341ab76b5e7_Logo";
-import LunchDiningIcon from "@mui/icons-material/LunchDining";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
 import Cart from "./Cart";
 import BurgerMenu from "./BurgerMenu";
+import { useDispatch, useSelector } from "react-redux";
 
-const f = [1, 1, 1, 1];
+const items = [1, 1, 1, 1];
 
 export const Navbar = ({ theme }) => {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
+  const dispatch = useDispatch();
+  const { items } = useSelector((state) => state.itemsSlice);
 
   return (
     <Box position="static" sx={{ backgroundColor: "white", width: "100%" }}>
@@ -77,7 +79,11 @@ export const Navbar = ({ theme }) => {
               <Button sx={{ color: "gray", fontWeight: "400" }}>CONTACT</Button>
             </Box>
             <BurgerMenu />
-            <Button onClick={() => setIsDrawerOpen(true)}>
+            <Button
+              onClick={() => {
+                setIsDrawerOpen(true);
+              }}
+            >
               <Badge badgeContent={0} showZero color="w">
                 <ShoppingCartIcon
                   color="w"
@@ -96,7 +102,7 @@ export const Navbar = ({ theme }) => {
         <Cart
           isDrawerOpen={isDrawerOpen}
           setIsDrawerOpen={setIsDrawerOpen}
-          f={f}
+          items={items}
         />
       </Box>
     </Box>

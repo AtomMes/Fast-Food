@@ -1,11 +1,16 @@
 import { Close, LunchDining } from "@mui/icons-material";
 import { Box, Button, Drawer, TextField, Typography } from "@mui/material";
 import React from "react";
+import { addToCart, minusFromCart } from "../redux/itemsSlice";
+import { useDispatch } from "react-redux";
 
-const Cart = ( {isDrawerOpen, setIsDrawerOpen, f, } ) => {
+const Cart = ({ isDrawerOpen, setIsDrawerOpen, items }) => {
+  const cartItems = items.filter((item) => item.count >= 1);
+
+  const dispatch = useDispatch();
+
   return (
     <Drawer
-      width="240px"
       anchor="right"
       open={isDrawerOpen}
       onClose={() => setIsDrawerOpen(false)}
@@ -24,29 +29,84 @@ const Cart = ( {isDrawerOpen, setIsDrawerOpen, f, } ) => {
           <Close onClick={() => setIsDrawerOpen(false)} cursor="pointer" />
         </Box>
         <Box flex="1" padding={2} sx={{ overflow: "auto" }}>
-          {f.map((ff, i) => (
+          {cartItems.map((item) => (
             <Box
               display="flex"
               alignItems="center"
-              key={i}
+              key={item.id}
               borderBottom="1px solid rgb(220,220,220)"
             >
-              <LunchDining sx={{ width: "90px", height: "auto" }} />
+              <Box
+                component="img"
+                alt="img"
+                src={item.imageUrl}
+                sx={{ width: "90px", height: "auto" }}
+                borderRadius="10px"
+                margin="20px 20px 20px 0"
+              />
               <Box flex="1">
-                <Typography>Name of the Food</Typography>
-                <Typography>$ 4.00 USD</Typography>
+                <Typography>{item.name}</Typography>
+                <Typography>$ {item.price}.00 USD</Typography>
                 <Button>Remove</Button>
               </Box>
-              <Box>
-                <TextField
-                  size="small"
-                  variant="outlined"
-                  sx={{
-                    width: "65px",
-                    marginRight: "10px",
-                  }}
-                  type="number"
-                />
+              <Box display="flex" alignItems="center">
+                <Box
+                  margin="0 10px"
+                  display="flex"
+                  justifyContent="center"
+                  alignItems="center"
+                  width="30px"
+                  height="30px"
+                  bgcolor="pink"
+                  borderRadius="50%"
+                >
+                  {item.count ? item.count : 0}
+                </Box>
+                <Box
+                  display="flex"
+                  flexDirection="column"
+                  justifyContent="space-between"
+                  gap="3px"
+                >
+                  <Button
+                    color="w"
+                    size="small"
+                    sx={{
+                      width: "20px",
+                      padding: "5px",
+                      textAlign: "center",
+                      minWidth: "0px",
+                      marginRight: "10px",
+                      bgcolor: "green",
+                      height: "20px",
+                      "&:hover": {
+                        backgroundColor: "darkgreen",
+                      },
+                    }}
+                    onClick={() => dispatch(addToCart(item.id))}
+                  >
+                    +
+                  </Button>
+                  <Button
+                    color="w"
+                    size="small"
+                    sx={{
+                      width: "20px",
+                      padding: "5px",
+                      textAlign: "center",
+                      minWidth: "0px",
+                      marginRight: "10px",
+                      bgcolor: "green",
+                      height: "20px",
+                      "&:hover": {
+                        backgroundColor: "darkgreen",
+                      },
+                    }}
+                    onClick={() => dispatch(minusFromCart(item.id))}
+                  >
+                    -
+                  </Button>
+                </Box>
               </Box>
             </Box>
           ))}

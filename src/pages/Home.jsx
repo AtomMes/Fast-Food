@@ -9,8 +9,13 @@ import home3 from "../images/home3.png";
 import home4 from "../images/home4.png";
 import Buttons from "../components/Buttons";
 import Content from "../components/Content";
-// header, subtitle, button, image, reverse
+import { useDispatch, useSelector } from "react-redux";
+import { setItems } from "../redux/itemsSlice";
+import axios from "axios";
+
 const Home = () => {
+  const dispatch = useDispatch();
+
   const header1 = "Beautiful food & takeaway, delivered to your door.";
   const subtitle1 = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.`;
   const button1 = `Place an Order`;
@@ -44,6 +49,8 @@ const Home = () => {
       isSelected: false,
     },
   ]);
+
+ 
 
   const handleClick = (id) => {
     setButtons(
