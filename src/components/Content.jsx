@@ -1,5 +1,5 @@
 import LunchDiningIcon from "@mui/icons-material/LunchDining";
-import { Box, Button, TextField, Typography } from "@mui/material";
+import { Box, Button  } from "@mui/material";
 import { Link, useAsyncError } from "react-router-dom";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,6 +9,7 @@ import React from "react";
 import { addToCart, setItems } from "../redux/itemsSlice";
 import Buttons from "./Buttons";
 import Products from "./Products";
+import Skeletons from "./Skeletons";
 
 const Content = ({ button }) => {
   const [buttons, setButtons] = React.useState([
@@ -20,7 +21,7 @@ const Content = ({ button }) => {
     {
       name: "Burgers",
       id: 1,
-      isSelected: false
+      isSelected: false,
     },
     {
       name: "Sides",
@@ -39,6 +40,7 @@ const Content = ({ button }) => {
   const { items } = useSelector((state) => state.itemsSlice);
   const dispatch = useDispatch();
   const [food, setFood] = React.useState(items);
+  const [loading, setLoading] = React.useState(true);
 
   const handleClick = (id) => {
     setSelectedButton(id);
@@ -63,6 +65,7 @@ const Content = ({ button }) => {
   React.useEffect(() => {
     setFood(items.filter((item) => item.types.includes(selectedButton)));
     localStorage.setItem("items", JSON.stringify(items));
+    setLoading(false);
   }, [items]);
 
   const handlePlus = async (id) => {
@@ -82,8 +85,8 @@ const Content = ({ button }) => {
         margin: "0 auto",
       }}
     >
-    <Buttons buttons={buttons} handleClick={handleClick} />
-    <Products food={food} />
+      <Buttons buttons={buttons} handleClick={handleClick} />
+      {loading ? <Skeletons /> : <Products food={food} />}
       {button && (
         <Button
           variant="outlined"

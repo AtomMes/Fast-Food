@@ -35,12 +35,24 @@ export const Navbar = ({ theme }) => {
       dispatch(setItems(data));
     } else {
       const fetchData = async () => {
+
+
+
+
+
         const { data } = await axios.get(
           `https://634ef267df22c2af7b475a0f.mockapi.io/items`
         );
         dispatch(setItems(data));
       };
       fetchData();
+
+
+
+
+
+
+      
     }
   }, []);
   return (
