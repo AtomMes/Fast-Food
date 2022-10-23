@@ -19,14 +19,30 @@ import { Link } from "react-router-dom";
 import Cart from "./Cart";
 import BurgerMenu from "./BurgerMenu";
 import { useDispatch, useSelector } from "react-redux";
-
-const items = [1, 1, 1, 1];
+import { setItems } from "../redux/itemsSlice";
+import axios from "axios";
 
 export const Navbar = ({ theme }) => {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
   const dispatch = useDispatch();
   const { items } = useSelector((state) => state.itemsSlice);
 
+  const cartItems = items.filter((item) => item.count >= 1);
+
+  React.useEffect(() => {
+    if (JSON.parse(localStorage.getItem("items"))) {
+      const data = JSON.parse(localStorage.getItem("items"));
+      dispatch(setItems(data));
+    } else {
+      const fetchData = async () => {
+        const { data } = await axios.get(
+          `https://634ef267df22c2af7b475a0f.mockapi.io/items`
+        );
+        dispatch(setItems(data));
+      };
+      fetchData();
+    }
+  }, []);
   return (
     <Box position="static" sx={{ backgroundColor: "white", width: "100%" }}>
       <Box
@@ -43,17 +59,18 @@ export const Navbar = ({ theme }) => {
             alignItems: "center",
           }}
         >
-          <Link to="/" style={{ textDecoration: "none" }}>
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="logo"
-              sx={{ width: "60px", height: "60px" }}
-            >
-              <MainLogo />
-            </IconButton>
-          </Link>
+          <Box sx={{ paddingLeft: "12px", height: "70px", overflow: "hidden" }}>
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <IconButton
+                size="large"
+                edge="start"
+                color="inherit"
+                sx={{ width: "60px", height: "60px" }}
+              >
+                <MainLogo />
+              </IconButton>
+            </Link>
+          </Box>
           <Stack direction="row" spacing={2}>
             <Box
               sx={{
@@ -84,7 +101,12 @@ export const Navbar = ({ theme }) => {
                 setIsDrawerOpen(true);
               }}
             >
-              <Badge badgeContent={0} showZero color="w">
+              <Badge
+                badgeContent={cartItems.length}
+                showZero
+                color="w"
+                fontWeight="bold"
+              >
                 <ShoppingCartIcon
                   color="w"
                   sx={{
@@ -102,7 +124,7 @@ export const Navbar = ({ theme }) => {
         <Cart
           isDrawerOpen={isDrawerOpen}
           setIsDrawerOpen={setIsDrawerOpen}
-          items={items}
+          items={cartItems}
         />
       </Box>
     </Box>

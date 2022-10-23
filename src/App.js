@@ -8,6 +8,7 @@ import Company from "./pages/Company";
 import { Routes, Route } from "react-router-dom";
 import FAQ from "./pages/FAQ";
 import Home from "./pages/Home";
+import Product from "./pages/Product";
 
 export const theme = createTheme({
   palette: {
@@ -33,7 +34,9 @@ function App() {
           <Route path="/order" element={<Order />} />
           <Route path="/company" element={<Company />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/product/:id" element={<Product />} />
           <Route path="/" element={<Home />} />
+          
         </Routes>
         <Footer />
       </div>

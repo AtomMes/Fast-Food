@@ -1,8 +1,11 @@
 import { Box, Button } from "@mui/material";
 import { useTheme } from "@mui/material";
+import axios from "axios";
 import React from "react";
+import { setItems } from "../redux/itemsSlice";
+import { useDispatch, useSelector } from "react-redux";
 
-const Buttons = ({ buttons, setButtons, handleClick }) => {
+const Buttons = ({ buttons, handleClick }) => {
   return (
     <Box
       sx={{
@@ -11,7 +14,7 @@ const Buttons = ({ buttons, setButtons, handleClick }) => {
         alignItems: "center",
         justifyContent: "center",
         gap: "10px",
-        padding: "120px 0px",
+        padding: "120px 0 0",
         width: "100%",
         maxWidth: "1200px",
         margin: "0 auto",

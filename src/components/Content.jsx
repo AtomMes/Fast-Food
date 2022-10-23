@@ -1,140 +1,112 @@
 import LunchDiningIcon from "@mui/icons-material/LunchDining";
 import { Box, Button, TextField, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useAsyncError } from "react-router-dom";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { useDispatch, useSelector } from "react-redux";
 
 import axios from "axios";
 import React from "react";
 import { addToCart, setItems } from "../redux/itemsSlice";
+import Buttons from "./Buttons";
+import Products from "./Products";
 
 const Content = ({ button }) => {
+  const [buttons, setButtons] = React.useState([
+    {
+      name: "Full Menu",
+      id: 0,
+      isSelected: false,
+    },
+    {
+      name: "Burgers",
+      id: 1,
+      isSelected: false
+    },
+    {
+      name: "Sides",
+      id: 2,
+      isSelected: false,
+    },
+    {
+      name: "Drinks",
+      id: 3,
+      isSelected: false,
+    },
+  ]);
+
+  const [selectedButton, setSelectedButton] = React.useState(0);
+
   const { items } = useSelector((state) => state.itemsSlice);
   const dispatch = useDispatch();
+  const [food, setFood] = React.useState(items);
+
+  const handleClick = (id) => {
+    setSelectedButton(id);
+  };
 
   React.useEffect(() => {
-    const fetchData = async () => {
-      const { data } = await axios.get(
-        `https://634ef267df22c2af7b475a0f.mockapi.io/items`
-      );
-      dispatch(setItems(data));
-    };
-    fetchData();
+    setFood(items.filter((item) => item.types.includes(selectedButton)));
+    setButtons(
+      buttons.map((button) => {
+        if (selectedButton === button.id) {
+          return { ...button, isSelected: true };
+        } else {
+          return { ...button, isSelected: false };
+        }
+      })
+    );
+  }, [selectedButton]);
+
+  React.useEffect(() => {
+    setFood(items);
   }, []);
+  React.useEffect(() => {
+    setFood(items.filter((item) => item.types.includes(selectedButton)));
+    localStorage.setItem("items", JSON.stringify(items));
+  }, [items]);
+
+  const handlePlus = async (id) => {
+    dispatch(addToCart(id));
+  };
 
   return (
     <Box
       sx={{
         display: "flex",
+        flexDirection: "column",
         flexWrap: "wrap",
         width: "100%",
 
         maxWidth: "1200px",
         justifyContent: "space-between",
-        margin: "50px auto",
+        margin: "0 auto",
       }}
     >
-      {items.map((item) => (
-        <Box
-          key={item.id}
+    <Buttons buttons={buttons} handleClick={handleClick} />
+    <Products food={food} />
+      {button && (
+        <Button
+          variant="outlined"
+          color="w"
           sx={{
-            display: "flex",
-            flexDirection: { xs: "column", sm: "row" },
-            border: "0.5px solid rgba(53, 184, 190, 0.35)",
-            borderRadius: "6px",
-            width: { xs: "49%", sm: "100%", md: "49%" },
-            padding: "25px",
-            transition: ".1s ease-in",
-            marginBottom: "22px",
+            textTransform: "capitalize",
+            color: "w",
+            backgroundColor: "#35b8be",
+            fontWeight: "400",
+            minHeight: "52px",
             "&:hover": {
-              border: "0.5px solid rgba(53, 184, 190, .6)",
+              backgroundColor: "#1a9da3",
             },
+            whiteSpace: "nowrap",
+            margin: "50px auto",
           }}
+          endIcon={<KeyboardArrowRightIcon />}
         >
-          <Box
-            component="img"
-            src={item.imageUrl}
-            width="130px"
-            height="auto"
-            marginRight="25px"
-            borderRadius="10px"
-          />
-          <Box
-            sx={{
-              width: "100%",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-            }}
-          >
-            <Box
-              sx={{
-                display: { xs: "block", sm: "flex" },
-                justifyContent: "space-between",
-                alignItems: "center",
-                marginBottom: "9px",
-              }}
-            >
-              <Typography variant="h6">{item.name}</Typography>
-              <Typography color="primary">$ {item.price}.00 USD</Typography>
-            </Box>
-            <Typography marginBottom="8px">{item.description}</Typography>
-            <Box sx={{ display: "flex" }}>
-              <Button
-                variant="contained"
-                sx={{
-                  color: "white",
-                  textTransform: "capitalize",
-                  whiteSpace: "nowrap",
-                }}
-                onClick={() => dispatch(addToCart(item.id))}
-              >
-                {item.count > 0 && (
-                  <Box
-                    marginRight="10px"
-                    display="flex"
-                    justifyContent="center"
-                    alignItems="center"
-                    width="30px"
-                    height="30px"
-                    bgcolor="pink"
-                    borderRadius="50%"
-                    color="black"
-                  >
-                    {item.count}
-                  </Box>
-                )}
-                Add to cart
-              </Button>
-            </Box>
-          </Box>
-        </Box>
-      ))}
-      <Button
-        variant="outlined"
-        color="w"
-        sx={{
-          textTransform: "capitalize",
-          color: "w",
-          backgroundColor: "#35b8be",
-          fontWeight: "400",
-          minHeight: "52px",
-          "&:hover": {
-            backgroundColor: "#1a9da3",
-          },
-          whiteSpace: "nowrap",
-          margin: "50px auto",
-        }}
-        endIcon={<KeyboardArrowRightIcon />}
-      >
-        {button ? (
           <Link to="/order" style={{ textDecoration: "none", color: "white" }}>
             {button}
           </Link>
-        ) : (
-          "Next"
-        )}
-      </Button>
+        </Button>
+      )}
     </Box>
   );
 };

@@ -15,6 +15,12 @@ const Company = () => {
   since the 1500.`;
   const button = "Learn About Us";
   const image = freshFoodSvg;
+
+  React.useEffect(() => {
+    window.scrollTo(0,0)
+  }, [])
+  
+  
   return (
     <Box>
       <Box

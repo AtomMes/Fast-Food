@@ -5,41 +5,17 @@ import Header from "../components/Header";
 import Questions from "../components/Questions";
 
 const FAQ = () => {
-  const [buttons, setButtons] = React.useState([
-    {
-      name: "Our Food",
-      id: 1,
-      isSelected: false,
-    },
-    {
-      name: "Our Delivery",
-      id: 2,
-      isSelected: false,
-    },
-    {
-      name: "Our company",
-      id: 3,
-      isSelected: false,
-    }
-  ]);
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-  const handleClick = (id) => {
-    setButtons(
-      buttons.map((button) => {
-        if (id === button.id) {
-          return { ...button, isSelected: true };
-        } else {
-          return { ...button, isSelected: false };
-        }
-      })
-    );
-  };
 
   return (
     <Box>
       <Header text1="Frequently Asked " text2="Questions" />
-      <Buttons buttons={buttons} handleClick={handleClick} setButtons={setButtons} />
-      <Questions />
+      <Box className="animate__animated animate__fadeIn">
+        <Questions />
+      </Box>
     </Box>
   );
 };

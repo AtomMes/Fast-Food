@@ -16,15 +16,22 @@ const questions = [
 ];
 
 const Questions = () => {
+  const [expanded, setExpanded] = React.useState();
   return (
     <Box maxWidth="1200px" width="100%" margin="100px auto">
       {questions.map((question, i) => (
-        <Accordion key={i}>
+        <Accordion
+          key={i}
+          expanded={expanded == i}
+          onClick={() => setExpanded(i)}
+        >
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             sx={{ padding: "15px" }}
           >
-            <Typography color='primary' variant='h6' >{question}</Typography>
+            <Typography color="primary" variant="h6">
+              {question}
+            </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>

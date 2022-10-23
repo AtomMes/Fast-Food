@@ -1,6 +1,7 @@
 import { Facebook, Instagram, Twitter } from "@mui/icons-material";
 import { Box, Button, IconButton, styled, Typography } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 import MainLogo from "../images/5e865e09d8efa341ab76b5e7_Logo";
 
 const Footer = () => {
@@ -13,7 +14,7 @@ const Footer = () => {
       }}
     >
       <Box
-        sx={{ 
+        sx={{
           maxWidth: "1200px",
           margin: "0 auto",
         }}
@@ -29,7 +30,7 @@ const Footer = () => {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              margin: { xs: "0 auto", lg: "0" },
+              margin: { xs: "0 auto", lg: "20px 0" },
             }}
           >
             <IconButton
@@ -43,7 +44,7 @@ const Footer = () => {
             </IconButton>
             <Typography
               variant="subtitle1"
-              sx={{ marginTop: "10px", marginBottom: "30px" }}
+              sx={{ marginTop: "20px", marginBottom: "30px" }}
             >
               Takeaway & Delivery template <br /> for small - medium businesses.
             </Typography>
@@ -58,21 +59,31 @@ const Footer = () => {
                 width: "200px",
               }}
             >
-              <Typography sx={{ fontWeight: "bold", marginBottom: "20px" }}>
-                <Button color="b">Company</Button>
-              </Typography>
-              <Typography sx={{ fontWeight: "400", marginBottom: "20px" }}>
-                <Button color="b">Home</Button>
-              </Typography>
-              <Typography sx={{ fontWeight: "400", marginBottom: "20px" }}>
-                <Button color="b">Order</Button>
-              </Typography>
-              <Typography sx={{ fontWeight: "400", marginBottom: "20px" }}>
-                <Button color="b">FAQ</Button>
-              </Typography>
-              <Typography sx={{ fontWeight: "400", marginBottom: "20px" }}>
-                <Button color="b">Contact</Button>
-              </Typography>
+              <Link to="/company" style={{ textDecoration: "none" }}>
+                <Typography sx={{ fontWeight: "bold", marginBottom: "20px" }}>
+                  <Button color="b">Company</Button>
+                </Typography>
+              </Link>
+              <Link to="/" style={{ textDecoration: "none" }}>
+                <Typography sx={{ fontWeight: "400", marginBottom: "20px" }}>
+                  <Button color="b">Home</Button>
+                </Typography>
+              </Link>
+              <Link to="/order" style={{ textDecoration: "none" }}>
+                <Typography sx={{ fontWeight: "400", marginBottom: "20px" }}>
+                  <Button color="b">Order</Button>
+                </Typography>
+              </Link>
+              <Link to="/fAQ" style={{ textDecoration: "none" }}>
+                <Typography sx={{ fontWeight: "400", marginBottom: "20px" }}>
+                  <Button color="b">FAQ</Button>
+                </Typography>
+              </Link>
+              <Link to="/" style={{ textDecoration: "none" }}>
+                <Typography sx={{ fontWeight: "400", marginBottom: "20px" }}>
+                  <Button color="b">Contact</Button>
+                </Typography>
+              </Link>
             </Box>
             <Box
               display="flex"
@@ -126,7 +137,7 @@ const Footer = () => {
             alignItems: "center",
           }}
         >
-          <Typography>Built by Flowbase, Powered by Webflow</Typography>
+          <Typography>Built by Atom, Powered by Webflow</Typography>
           <Box display="flex" sx={{ gap: "10px" }}>
             <Button
               variant="outlined"

@@ -1,5 +1,6 @@
 import { Box, Stack, Typography, Button } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const TextAndImage = ({
   header,
@@ -8,6 +9,7 @@ const TextAndImage = ({
   image,
   reverse,
   bgcolor,
+  to,
 }) => {
   return (
     <Box sx={{ bgcolor: bgcolor ? bgcolor : "white" }}>
@@ -57,24 +59,26 @@ const TextAndImage = ({
           >
             {subtitle}
           </Typography>
-          <Button
-            variant="outlined"
-            color="w"
-            sx={{
-              color: "w",
-              backgroundColor: "#35b8be",
-              width: "160px",
-              fontWeight: "400",
-              minHeight: "52px",
-              "&:hover": {
-                backgroundColor: "#1a9da3",
-              },
-              whiteSpace: "nowrap",
-              textTransform: "capitalize",
-            }}
-          >
-            {button}
-          </Button>
+          <Link to={to} style={{ textDecoration: "none" }}>
+            <Button
+              variant="outlined"
+              color="w"
+              sx={{
+                color: "w",
+                backgroundColor: "#35b8be",
+                width: "160px",
+                fontWeight: "400",
+                minHeight: "52px",
+                "&:hover": {
+                  backgroundColor: "#1a9da3",
+                },
+                whiteSpace: "nowrap",
+                textTransform: "capitalize",
+              }}
+            >
+              {button}
+            </Button>
+          </Link>
         </Stack>
         {!reverse && (
           <Box

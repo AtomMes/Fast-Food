@@ -27,8 +27,15 @@ const itemsSlice = createSlice({
       );
       findItem.count--;
     },
+    removeFromCart(state, action) {
+      const findItem = state.items.find(
+        (obj) => Number(obj.id) === Number(action.payload)
+      );
+      findItem.count = 0;
+    },
   },
 });
 
-export const { setItems, addToCart, minusFromCart } = itemsSlice.actions;
+export const { setItems, addToCart, minusFromCart, removeFromCart } =
+  itemsSlice.actions;
 export default itemsSlice.reducer;
