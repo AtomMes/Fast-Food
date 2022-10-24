@@ -1,5 +1,5 @@
 import LunchDiningIcon from "@mui/icons-material/LunchDining";
-import { Box, Button  } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { Link, useAsyncError } from "react-router-dom";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { useDispatch, useSelector } from "react-redux";

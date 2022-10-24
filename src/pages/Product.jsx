@@ -37,7 +37,6 @@ const Product = () => {
 
   return (
     <Box>
-      <Header text1={item.name} />
       <FullProduct item={item} text1={text1} text2={text2} />
       <Tabs text1={text1} text2={text2} />
       <Typography
