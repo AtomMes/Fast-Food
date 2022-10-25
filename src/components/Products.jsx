@@ -53,24 +53,18 @@ const Products = ({ food }) => {
           >
             <Box
               sx={{
-                display: { xs: "block", sm: "flex" },
+                display: "flex",
+                flexDirection: { xs: "column", sm: "row" },
                 justifyContent: "space-between",
                 alignItems: "center",
                 marginBottom: "9px",
               }}
             >
-              <Typography
-                variant="h6"
-                sx={{
-                  whiteSpace: "nowrap",
-                }}
-              >
-                {item.name}
-              </Typography>
+              <Typography variant="h6">{item.name}</Typography>
               <Typography color="primary">$ {item.price}.00 USD</Typography>
             </Box>
             <Typography marginBottom="8px">{item.description}</Typography>
-            <Box sx={{ display: "flex" }}>
+            <Box display='flex'>
               <Button
                 variant="contained"
                 sx={{
@@ -78,17 +72,20 @@ const Products = ({ food }) => {
                   textTransform: "capitalize",
                   whiteSpace: "nowrap",
                   height: "40px",
+                  padding: 1,
                 }}
                 onClick={() => dispatch(addToCart(item.id))}
               >
                 {item.count > 0 && (
                   <Box
-                    marginRight="10px"
+                    marginRight="5px"
                     display="flex"
                     justifyContent="center"
                     alignItems="center"
-                    width="28px"
-                    height="28px"
+                    minWidth="25px"
+                    height="25px"
+                    fontSize="14px"
+                    paddingTop="3px"
                     bgcolor="white"
                     color="#35b8be"
                     borderRadius="50%"
