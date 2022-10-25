@@ -50,8 +50,8 @@ const Cart = ({ isDrawerOpen, setIsDrawerOpen, items }) => {
   };
 
   return (
-    <Drawer anchor="right" open={isDrawerOpen} onClose={closeDrawer}>
-      <Box width="100%" height="100%" display="flex" flexDirection="column">
+    <Drawer anchor="right"  open={isDrawerOpen} onClose={closeDrawer}>
+      <Box maxWidth='350px' width='100%' height="100%" display="flex" flexDirection="column">
         <Box
           display="flex"
           justifyContent="space-between"
@@ -64,7 +64,7 @@ const Cart = ({ isDrawerOpen, setIsDrawerOpen, items }) => {
           </Typography>
           <Close onClick={closeDrawer} cursor="pointer" />
         </Box>
-        <Box width="400px" flex="1" padding={2} sx={{ overflow: "auto" }}>
+        <Box width="100%" flex="1" padding={2} sx={{ overflow: "auto" }}>
           {items.length ? (
             <CartItems items={items} />
           ) : (
@@ -80,7 +80,7 @@ const Cart = ({ isDrawerOpen, setIsDrawerOpen, items }) => {
                 Cart Is Empty
               </Typography>{" "}
               <ProductionQuantityLimitsIcon
-                sx={{ width: "200px", height: "200px" }}
+                sx={{ width: "70%", height: "auto" }}
               />
             </Box>
           )}
