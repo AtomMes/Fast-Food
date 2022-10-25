@@ -1,12 +1,9 @@
-import LunchDiningIcon from "@mui/icons-material/LunchDining";
 import { Box, Button } from "@mui/material";
-import { Link, useAsyncError } from "react-router-dom";
+import { Link } from "react-router-dom";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import { useDispatch, useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
 
-import axios from "axios";
 import React from "react";
-import { addToCart, setItems } from "../redux/itemsSlice";
 import Buttons from "./Buttons";
 import Products from "./Products";
 import Skeletons from "./Skeletons";
@@ -38,7 +35,6 @@ const Content = ({ button }) => {
   const [selectedButton, setSelectedButton] = React.useState(0);
 
   const { items } = useSelector((state) => state.itemsSlice);
-  const dispatch = useDispatch();
   const [food, setFood] = React.useState(items);
   const [loading, setLoading] = React.useState(true);
 
@@ -57,20 +53,19 @@ const Content = ({ button }) => {
         }
       })
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedButton]);
 
   React.useEffect(() => {
     setFood(items);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   React.useEffect(() => {
     setFood(items.filter((item) => item.types.includes(selectedButton)));
     localStorage.setItem("items", JSON.stringify(items));
     setLoading(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [items]);
-
-  const handlePlus = async (id) => {
-    dispatch(addToCart(id));
-  };
 
   return (
     <Box

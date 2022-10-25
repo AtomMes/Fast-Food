@@ -1,6 +1,5 @@
 import { Box } from "@mui/material";
 import React from "react";
-import Buttons from "../components/Buttons";
 import Header from "../components/Header";
 import Questions from "../components/Questions";
 

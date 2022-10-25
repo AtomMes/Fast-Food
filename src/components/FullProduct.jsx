@@ -1,7 +1,6 @@
 import { Box, Button, Typography } from "@mui/material";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
 import { addToCart } from "../redux/itemsSlice";
 
 const FullProduct = ({ item, text1, text2 }) => {
@@ -40,7 +39,6 @@ const FullProduct = ({ item, text1, text2 }) => {
         flex="1"
         display="flex"
         flexDirection="column"
-        // alignItems="center"
         gap={3}
         width="95%"
         padding="25px 0"

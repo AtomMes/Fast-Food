@@ -1,5 +1,4 @@
-import { Box, Button, Typography } from "@mui/material";
-import fixedImage from "../images/fixedImage.jpg";
+import { Box,  Typography } from "@mui/material";
 import React from "react";
 import TextAndImage from "../components/TextAndImage";
 import HowItWorks from "../components/HowItWorks";
@@ -7,11 +6,7 @@ import home1 from "../images/home1.png";
 import home2 from "../images/home2.png";
 import home3 from "../images/home3.png";
 import home4 from "../images/home4.png";
-import Buttons from "../components/Buttons";
 import Content from "../components/Content";
-import { useDispatch, useSelector } from "react-redux";
-import { setItems } from "../redux/itemsSlice";
-import axios from "axios";
 import FW from "../components/FW";
 
 const Home = () => {
@@ -71,7 +66,7 @@ const Home = () => {
         Use our menu to place an order online, or phone our store to place a
         pickup order. Fast and fresh food.
       </Typography>
-      <Content button="See full menu" />
+      <Content button="Go to order page" />
       <TextAndImage
         header={header3}
         subtitle={subtitle}

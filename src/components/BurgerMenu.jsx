@@ -1,20 +1,6 @@
-import {
-  Toolbar,
-  IconButton,
-  Button,
-  Box,
-  styled,
-  Menu,
-  MenuItem,
-  Stack,
-  Drawer,
-  Typography,
-  Badge,
-  TextField,
-} from "@mui/material";
+import { Button, Box, Menu, MenuItem } from "@mui/material";
 
 import MenuIcon from "@mui/icons-material/Menu";
-
 
 import React from "react";
 import { Link } from "react-router-dom";
@@ -62,7 +48,7 @@ const BurgerMenu = () => {
         }}
       >
         <MenuItem onClick={handleClose}>
-          <Link to="/" style={{ textDecoration: "none" }}>
+          <Link to="/home" style={{ textDecoration: "none" }}>
             <Button sx={{ color: "gray" }}>Home</Button>
           </Link>
         </MenuItem>
@@ -80,9 +66,6 @@ const BurgerMenu = () => {
           <Link to="/faq" style={{ textDecoration: "none" }}>
             <Button sx={{ color: "gray" }}>FAQ</Button>
           </Link>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Button sx={{ color: "gray" }}>CONTACT</Button>
         </MenuItem>
       </Menu>
     </Box>

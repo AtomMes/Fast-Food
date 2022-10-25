@@ -1,13 +1,11 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box,  Typography } from "@mui/material";
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import FullProduct from "../components/FullProduct";
 import FW from "../components/FW";
-import Header from "../components/Header";
 import Products from "../components/Products";
 import Tabs from "../components/Tabs";
-import { addToCart } from "../redux/itemsSlice";
 
 const Product = () => {
   const { id } = useParams();
@@ -29,6 +27,7 @@ const Product = () => {
 
   React.useEffect(() => {
     setFood(items.filter((i) => i.types.includes(item.types[1])));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [items]);
 
   if (!item) {

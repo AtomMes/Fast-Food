@@ -1,7 +1,7 @@
 import { Box, Skeleton } from "@mui/material";
 import React from "react";
 
-const f = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
 const Skeletons = () => {
   return (
@@ -13,7 +13,7 @@ const Skeletons = () => {
         justifyContent: "space-between",
       }}
     >
-      {f.map((item, i) => (
+      {skeletons.map((item, i) => (
         <Box
           key={i}
           sx={{

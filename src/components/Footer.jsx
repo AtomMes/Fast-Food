@@ -1,8 +1,53 @@
 import { Facebook, Instagram, Twitter } from "@mui/icons-material";
-import { Box, Button, IconButton, styled, Typography } from "@mui/material";
+import { Box, Button, IconButton, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
-import MainLogo from "../images/5e865e09d8efa341ab76b5e7_Logo";
+import MainLogo from "../images/mainLogo.svg";
+
+const navigationButtons = [
+  {
+    text: "Home",
+    to: "/home",
+  },
+  {
+    text: "Order",
+    to: "/order",
+  },
+  {
+    text: "Company",
+    to: "/company",
+  },
+  {
+    text: "FAQ",
+    to: "/faq",
+  },
+];
+
+const contacts = [
+  {
+    text: "GitHub",
+    to: "https://github.com/AtomMes",
+  },
+  {
+    text: "LinkedIn",
+    to: "https://www.linkedin.com/in/artem-mesropyan-27b04a24a/",
+  },
+  {
+    text: "Netlify",
+    to: "https://app.netlify.com/teams/atommes/overview",
+  },
+];
+
+const socNet = [
+  {
+    icon: <Instagram />,
+    to: "https://www.instagram.com/a.t.m.e.s/",
+  },
+  {
+    icon: <Facebook />,
+    to: "https://www.facebook.com/atom.mesropyan/",
+  },
+];
 
 const Footer = () => {
   return (
@@ -37,10 +82,14 @@ const Footer = () => {
               size="large"
               edge="start"
               color="inherit"
-              aria-label="logo"
               sx={{ width: "60px", height: "60px" }}
             >
-              <MainLogo />
+              <Box
+                component="img"
+                alt="img"
+                src={MainLogo}
+                sx={{ width: "50px", height: "50px" }}
+              />
             </IconButton>
             <Typography
               variant="subtitle1"
@@ -59,31 +108,13 @@ const Footer = () => {
                 width: "200px",
               }}
             >
-              <Link to="/company" style={{ textDecoration: "none" }}>
-                <Typography sx={{ fontWeight: "bold", marginBottom: "20px" }}>
-                  <Button color="b">Company</Button>
-                </Typography>
-              </Link>
-              <Link to="/" style={{ textDecoration: "none" }}>
-                <Typography sx={{ fontWeight: "400", marginBottom: "20px" }}>
-                  <Button color="b">Home</Button>
-                </Typography>
-              </Link>
-              <Link to="/order" style={{ textDecoration: "none" }}>
-                <Typography sx={{ fontWeight: "400", marginBottom: "20px" }}>
-                  <Button color="b">Order</Button>
-                </Typography>
-              </Link>
-              <Link to="/fAQ" style={{ textDecoration: "none" }}>
-                <Typography sx={{ fontWeight: "400", marginBottom: "20px" }}>
-                  <Button color="b">FAQ</Button>
-                </Typography>
-              </Link>
-              <Link to="/" style={{ textDecoration: "none" }}>
-                <Typography sx={{ fontWeight: "400", marginBottom: "20px" }}>
-                  <Button color="b">Contact</Button>
-                </Typography>
-              </Link>
+              {contacts.map((contact, i) => (
+                <a key={i} href={contact.to} style={{ textDecoration: "none" }}>
+                  <Typography sx={{ fontWeight: "400", marginBottom: "20px" }}>
+                    <Button color="b">{contact.text}</Button>
+                  </Typography>
+                </a>
+              ))}
             </Box>
             <Box
               display="flex"
@@ -94,37 +125,13 @@ const Footer = () => {
                 width: "200px",
               }}
             >
-              <Typography sx={{ fontWeight: "bold", marginBottom: "20px" }}>
-                <Button color="b">Template</Button>
-              </Typography>
-              <Typography sx={{ fontWeight: "400", marginBottom: "20px" }}>
-                <Button color="b">Style Guide</Button>
-              </Typography>
-              <Typography sx={{ fontWeight: "400", marginBottom: "20px" }}>
-                <Button color="b">Changelog</Button>
-              </Typography>
-              <Typography sx={{ fontWeight: "400", marginBottom: "20px" }}>
-                <Button color="b">License</Button>
-              </Typography>
-              <Typography sx={{ fontWeight: "400", marginBottom: "20px" }}>
-                <Button color="b"> Webflow university</Button>
-              </Typography>
-            </Box>
-            <Box
-              display="flex"
-              sx={{
-                flexDirection: "column",
-                marginBottom: "20px",
-                alignItems: "center",
-                width: "200px",
-              }}
-            >
-              <Typography sx={{ fontWeight: "bold", marginBottom: "20px" }}>
-                <Button color="b">FlowBase</Button>
-              </Typography>
-              <Typography sx={{ fontWeight: "400", marginBottom: "20px" }}>
-                <Button color="b"> More Cloneables</Button>
-              </Typography>
+              {navigationButtons.map((nav, i) => (
+                <Link key={i} to={nav.to} style={{ textDecoration: "none" }}>
+                  <Typography sx={{ fontWeight: "400", marginBottom: "20px" }}>
+                    <Button color="b">{nav.text}</Button>
+                  </Typography>
+                </Link>
+              ))}
             </Box>
           </Box>
         </Box>
@@ -137,62 +144,29 @@ const Footer = () => {
             alignItems: "center",
           }}
         >
-          <Typography>Built by Atom, Powered by Webflow</Typography>
+          <Typography>Built by Atom</Typography>
           <Box display="flex" sx={{ gap: "10px" }}>
-            <Button
-              variant="outlined"
-              color="b"
-              sx={{
-                width: "40px",
-                height: "40px",
-                borderRadius: "100%",
-                padding: "0",
-                display: "flex",
-                padding: 0,
-                minHeight: 0,
-                minWidth: 0,
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Instagram />
-            </Button>
-            <Button
-              variant="outlined"
-              color="b"
-              sx={{
-                width: "40px",
-                height: "40px",
-                borderRadius: "100%",
-                padding: "0",
-                display: "flex",
-                padding: 0,
-                minHeight: 0,
-                minWidth: 0,
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Facebook />{" "}
-            </Button>
-            <Button
-              variant="outlined"
-              color="b"
-              sx={{
-                width: "40px",
-                height: "40px",
-                borderRadius: "100%",
-                padding: "0",
-                display: "flex",
-                padding: 0,
-                minHeight: 0,
-                minWidth: 0,
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Twitter />{" "}
-            </Button>
+            {socNet.map((net, i) => (
+              <a key={i} href={net.to} style={{ textDecoration: "none" }}>
+                <Button
+                  variant="outlined"
+                  color="b"
+                  sx={{
+                    width: "40px",
+                    height: "40px",
+                    borderRadius: "100%",
+                    display: "flex",
+                    padding: 0,
+                    minHeight: 0,
+                    minWidth: 0,
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  {net.icon}
+                </Button>
+              </a>
+            ))}
           </Box>
         </Box>
       </Box>

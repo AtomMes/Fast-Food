@@ -1,19 +1,6 @@
 import React from "react";
-import {
-  Toolbar,
-  IconButton,
-  Button,
-  Box,
-  styled,
-  Menu,
-  MenuItem,
-  Stack,
-  Drawer,
-  Typography,
-  Badge,
-  TextField,
-} from "@mui/material";
-import MainLogo from "../images/5e865e09d8efa341ab76b5e7_Logo";
+import { Toolbar, IconButton, Button, Box, Stack, Badge } from "@mui/material";
+import MainLogo from "../images/mainLogo.svg";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
 import Cart from "./Cart";
@@ -35,26 +22,35 @@ export const Navbar = ({ theme }) => {
       dispatch(setItems(data));
     } else {
       const fetchData = async () => {
-
-
-
-
-
         const { data } = await axios.get(
           `https://634ef267df22c2af7b475a0f.mockapi.io/items`
         );
         dispatch(setItems(data));
       };
       fetchData();
-
-
-
-
-
-
-      
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const navigationButtons = [
+    {
+      text: "Home",
+      to: "/home",
+    },
+    {
+      text: "Order",
+      to: "/order",
+    },
+    {
+      text: "Company",
+      to: "/company",
+    },
+    {
+      text: "FAQ",
+      to: "/faq",
+    },
+  ];
+
   return (
     <Box position="static" sx={{ backgroundColor: "white", width: "100%" }}>
       <Box
@@ -79,33 +75,29 @@ export const Navbar = ({ theme }) => {
                 color="inherit"
                 sx={{ width: "60px", height: "60px" }}
               >
-                <MainLogo />
+                <Box
+                  component="img"
+                  alt="img"
+                  src={MainLogo}
+                  sx={{ width: "50px", height: "50px" }}
+                />
               </IconButton>
             </Link>
           </Box>
           <Stack direction="row" spacing={2}>
             <Box
               sx={{
-                display: "flex",
                 alignItems: "center",
                 display: { xs: "none", sm: "flex" },
               }}
             >
-              <Link to="/" style={{ textDecoration: "none" }}>
-                <Button sx={{ color: "gray", fontWeight: "400" }}>Home</Button>
-              </Link>
-              <Link to="/order" style={{ textDecoration: "none" }}>
-                <Button sx={{ color: "gray", fontWeight: "400" }}>Order</Button>
-              </Link>
-              <Link to="company" style={{ textDecoration: "none" }}>
-                <Button sx={{ color: "gray", fontWeight: "400" }}>
-                  Company
-                </Button>
-              </Link>
-              <Link to="faq" style={{ textDecoration: "none" }}>
-                <Button sx={{ color: "gray", fontWeight: "400" }}>FAQ</Button>
-              </Link>
-              <Button sx={{ color: "gray", fontWeight: "400" }}>CONTACT</Button>
+              {navigationButtons.map((nav, i) => (
+                <Link to={nav.to} key={i} style={{ textDecoration: "none" }}>
+                  <Button sx={{ color: "gray", fontWeight: "400" }}>
+                    {nav.text}
+                  </Button>
+                </Link>
+              ))}
             </Box>
             <BurgerMenu />
             <Button

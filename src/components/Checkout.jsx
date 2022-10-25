@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 const Checkout = ({ open, handleClose }) => {
   return (
     <Backdrop
-      sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
-      open={open}
+      sx={{ color: "#fff", zIndex: 1000 }}
+      open={open ? open : false}
       onClick={handleClose}
     >
       <Box

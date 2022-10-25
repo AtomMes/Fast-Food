@@ -1,6 +1,5 @@
 import React from "react";
-import { Box, Typography, styled } from "@mui/material";
-
+import { Box, Typography } from "@mui/material";
 
 const Banner = () => {
   return (
@@ -13,7 +12,7 @@ const Banner = () => {
         alignItems: "center",
       }}
     >
-      <Typography sx={{color:'white'}}>
+      <Typography sx={{ color: "white" }}>
         We're open and available for takeaway & delivery. Order Now
       </Typography>
     </Box>

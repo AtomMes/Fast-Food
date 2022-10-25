@@ -59,7 +59,14 @@ const Products = ({ food }) => {
                 marginBottom: "9px",
               }}
             >
-              <Typography variant="h6">{item.name}</Typography>
+              <Typography
+                variant="h6"
+                sx={{
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {item.name}
+              </Typography>
               <Typography color="primary">$ {item.price}.00 USD</Typography>
             </Box>
             <Typography marginBottom="8px">{item.description}</Typography>

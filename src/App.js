@@ -31,12 +31,12 @@ function App() {
         <Banner />
         <Navbar />
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/order" element={<Order />} />
           <Route path="/company" element={<Company />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/product/:id" element={<Product />} />
-          <Route path="/" element={<Home />} />
-          
+          <Route path="/home" element={<Home />} />
         </Routes>
         <Footer />
       </div>
