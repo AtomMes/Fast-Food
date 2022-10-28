@@ -16,13 +16,22 @@ const questions = [
 
 const Questions = () => {
   const [expanded, setExpanded] = React.useState();
+
+  const expand = (id) => {
+    if(expanded === id){
+      setExpanded(null)
+    }else{
+      setExpanded(id)
+    }
+  }
+
   return (
     <Box maxWidth="1200px" width="100%" margin="100px auto">
       {questions.map((question, i) => (
         <Accordion
           key={i}
           expanded={expanded === i}
-          onClick={() => setExpanded(i)}
+          onClick={() => expand(i)}
         >
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}

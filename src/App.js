@@ -9,6 +9,7 @@ import { Routes, Route } from "react-router-dom";
 import FAQ from "./pages/FAQ";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
+import { Box } from "@mui/material";
 
 export const theme = createTheme({
   palette: {
@@ -37,6 +38,7 @@ function App() {
           <Route path="/faq" element={<FAQ />} />
           <Route path="/product/:id" element={<Product />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/*" element={<Box>page is not found</Box>} />
         </Routes>
         <Footer />
       </div>
