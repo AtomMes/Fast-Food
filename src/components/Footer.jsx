@@ -32,10 +32,6 @@ const contacts = [
     text: "LinkedIn",
     to: "https://www.linkedin.com/in/artem-mesropyan-27b04a24a/",
   },
-  {
-    text: "Netlify",
-    to: "https://app.netlify.com/teams/atommes/overview",
-  },
 ];
 
 const socNet = [
