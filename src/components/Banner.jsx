@@ -5,7 +5,7 @@ const Banner = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "#35b8be",
+        backgroundColor: "primary.main",
         minHeight: "40px",
         display: { xs: "none", sm: "flex" },
         justifyContent: "center",

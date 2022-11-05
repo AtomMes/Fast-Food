@@ -9,7 +9,7 @@ const Header = ({ text1, text2, text3 }) => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        bgcolor: "#f5fbfc",
+        bgcolor: "lig.main",
       }}
     >
       <Box
@@ -29,7 +29,7 @@ const Header = ({ text1, text2, text3 }) => {
           }}
         >
           {text1 && text1}
-          <Box sx={{ color: "#35b8be", display: "inline" }}>
+          <Box sx={{ color: "primary.main", display: "inline" }}>
             {text2 && text2}
           </Box>
           {text3 && text3}

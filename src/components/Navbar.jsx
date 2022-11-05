@@ -52,7 +52,7 @@ export const Navbar = ({ theme }) => {
   ];
 
   return (
-    <Box position="static" sx={{ backgroundColor: "white", width: "100%" }}>
+    <Box position="static" sx={{ backgroundColor: "w.main", width: "100%" }}>
       <Box
         sx={{
           width: "100%",
@@ -93,7 +93,7 @@ export const Navbar = ({ theme }) => {
             >
               {navigationButtons.map((nav, i) => (
                 <Link to={nav.to} key={i} style={{ textDecoration: "none" }}>
-                  <Button sx={{ color: "gray", fontWeight: "400" }}>
+                  <Button sx={{ color: "g.main", fontWeight: "400" }}>
                     {nav.text}
                   </Button>
                 </Link>
@@ -114,7 +114,7 @@ export const Navbar = ({ theme }) => {
                 <ShoppingCartIcon
                   color="w"
                   sx={{
-                    bgcolor: "#35b8be",
+                    bgcolor: "primary.main",
                     width: "55px",
                     height: "55px",
                     padding: "18px",

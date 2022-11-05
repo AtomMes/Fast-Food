@@ -19,10 +19,11 @@ const Checkout = ({ open, handleClose }) => {
         border="1px solid transparent"
         sx={{
           transition: ".1s ease-in",
-          backgroundColor: "#E3E3E3",
-          color: "black",
+          backgroundColor: "w.main",
+          color: "b.main",
           "&:hover": {
-            border: "2px solid #35b8be",
+            border: "2px solid",
+            borderColor: "primary.main",
           },
         }}
         display="flex"
@@ -36,7 +37,8 @@ const Checkout = ({ open, handleClose }) => {
           width="100px"
           height="100px"
           color="primary"
-          border="1px solid  #35b8be"
+          border="1px solid"
+          borderColor="primary.main"
           borderRadius="50%"
           display="flex"
           justifyContent="center"
@@ -48,7 +50,7 @@ const Checkout = ({ open, handleClose }) => {
         <Typography textAlign="center" variant="h4">
           Thank you for your purchase!
         </Typography>
-        <Typography color="gray" textAlign="center" variant="h6">
+        <Typography color="g.main" textAlign="center" variant="h6">
           {" "}
           Your order will be delivered to you soon{" "}
         </Typography>
@@ -57,7 +59,7 @@ const Checkout = ({ open, handleClose }) => {
             sx={{
               width: "100%",
               height: "50px",
-              color: "white",
+              color: "w.main",
               textTransform: "none",
             }}
             variant="contained"

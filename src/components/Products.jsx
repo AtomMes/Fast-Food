@@ -68,7 +68,7 @@ const Products = ({ food }) => {
               <Button
                 variant="contained"
                 sx={{
-                  color: "white",
+                  color: "w.main",
                   textTransform: "capitalize",
                   whiteSpace: "nowrap",
                   height: "40px",
@@ -86,8 +86,8 @@ const Products = ({ food }) => {
                     height="25px"
                     fontSize="14px"
                     paddingTop="3px"
-                    bgcolor="white"
-                    color="#35b8be"
+                    bgcolor="w.main"
+                    color="primary.main"
                     borderRadius="50%"
                   >
                     {item.count}

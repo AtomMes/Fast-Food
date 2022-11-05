@@ -53,7 +53,7 @@ const Footer = () => {
   return (
     <Box
       sx={{
-        bgcolor: "#f5fbfc",
+        bgcolor: "lig.main",
         width: "100%",
         paddingTop: "100px",
       }}
@@ -138,7 +138,8 @@ const Footer = () => {
         <Box
           sx={{
             padding: "20px 0 20px",
-            borderTop: "1px solid rgba(0, 0, 0, 0.151)",
+            borderTop: "1px solid",
+            borderTopColor:'g.light',
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",

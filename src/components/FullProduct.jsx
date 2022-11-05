@@ -55,7 +55,8 @@ const FullProduct = ({ item, text1, text2 }) => {
           flexDirection="column"
           gap={1}
           sx={{
-            borderTop: "0.5px solid rgba(53, 184, 190, 0.35)",
+            borderTop: "0.5px solid",
+            borderTopColor:'primary.light',
             padding: "27px 0",
           }}
         >
@@ -69,14 +70,15 @@ const FullProduct = ({ item, text1, text2 }) => {
         <Box
           sx={{
             display: "flex",
-            borderBottom: "0.5px solid rgba(53, 184, 190, 0.35)",
+            borderBottom: "0.5px solid ",
+            borderBottomColor:'primary.light',
             padding: "27px 0",
           }}
         >
           <Button
             variant="contained"
             sx={{
-              color: "white",
+              color: "w.main",
               textTransform: "capitalize",
               whiteSpace: "nowrap",
               height: "40px",
@@ -92,7 +94,7 @@ const FullProduct = ({ item, text1, text2 }) => {
                 width="28px"
                 height="28px"
                 bgcolor="white"
-                color="#35b8be"
+                color="primary.main"
                 borderRadius="50%"
               >
                 {item.count}

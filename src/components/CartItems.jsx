@@ -13,7 +13,8 @@ const CartItems = ({ items }) => {
           display="flex"
           alignItems="center"
           key={item.id}
-          borderBottom="1px solid rgb(220,220,220)"
+          borderBottom="1px solid"
+          borderBottomColor="g.light"
         >
           <Box
             component="img"
@@ -38,8 +39,8 @@ const CartItems = ({ items }) => {
               alignItems="center"
               width="30px"
               height="30px"
-              bgcolor="#35b8be"
-              color="white"
+              bgcolor="primary"
+              color="w.main"
               borderRadius="50%"
             >
               {item.count ? item.count : 0}
@@ -55,15 +56,15 @@ const CartItems = ({ items }) => {
                 variant="contained"
                 size="small"
                 sx={{
-                  color: "white",
                   width: "20px",
+                  color: "w.main",
                   padding: "5px",
                   textAlign: "center",
                   minWidth: "0px",
                   marginRight: "10px",
                   height: "20px",
                   "&:hover": {
-                    backgroundColor: "#1a9da3",
+                    backgroundColor: "primary.dark",
                   },
                 }}
                 onClick={() => dispatch(addToCart(item.id))}
@@ -76,14 +77,14 @@ const CartItems = ({ items }) => {
                 size="small"
                 sx={{
                   width: "20px",
-                  color: "white",
+                  color: "w.main",
                   padding: "5px",
                   textAlign: "center",
                   minWidth: "0px",
                   marginRight: "10px",
                   height: "20px",
                   "&:hover": {
-                    backgroundColor: "#1a9da3",
+                    backgroundColor: "primary.dark",
                   },
                 }}
                 onClick={() => dispatch(minusFromCart(item.id))}

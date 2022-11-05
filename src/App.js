@@ -11,6 +11,8 @@ import Home from "./pages/Home";
 import Product from "./pages/Product";
 import { Box } from "@mui/material";
 
+
+
 export const theme = createTheme({
   palette: {
     primary: {
@@ -22,6 +24,13 @@ export const theme = createTheme({
     b: {
       main: "#000",
     },
+    g:{
+      main:"#808080",
+      light:'#dcdcdc'
+    },
+    lig:{
+      main:'#f5fbfc'
+    }
   },
 });
 

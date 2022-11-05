@@ -56,7 +56,8 @@ const Cart = ({ isDrawerOpen, setIsDrawerOpen, items }) => {
           display="flex"
           justifyContent="space-between"
           alignItems="center"
-          borderBottom="1px solid grey"
+          borderBottom="1px solid"
+          borderBottomColor='g.main'
           padding={3}
         >
           <Typography variant="h4" sx={{ fontWeight: "bold" }}>
@@ -85,7 +86,7 @@ const Cart = ({ isDrawerOpen, setIsDrawerOpen, items }) => {
             </Box>
           )}
         </Box>
-        <Box padding={3} borderTop="1px solid grey">
+        <Box padding={3} borderTop="1px solid" borderTopColor='g.main'>
           {items.length ? (
             <>
               <Box
@@ -100,7 +101,7 @@ const Cart = ({ isDrawerOpen, setIsDrawerOpen, items }) => {
                 onClick={load}
                 loading={isLoading}
                 loadingPosition="start"
-                sx={{ width: "100%", height: "50px", color: "white" }}
+                sx={{ width: "100%", height: "50px", color: "w.main" }}
                 variant="contained"
               >
                 Continue to checkout
@@ -109,7 +110,7 @@ const Cart = ({ isDrawerOpen, setIsDrawerOpen, items }) => {
           ) : (
             <Link to="/order" style={{ textDecoration: "none" }}>
               <Button
-                sx={{ width: "100%", height: "50px", color: "white" }}
+                sx={{ width: "100%", height: "50px", color: "w.main" }}
                 variant="contained"
                 onClick={closeDrawer}
               >

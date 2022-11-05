@@ -61,11 +61,11 @@ const Company = () => {
               marginBottom: { xs: "20px", md: "0" },
             }}
           >
-            <Typography variant="h1" fontWeight="bold" sx={{ color: "white" }}>
+            <Typography variant="h1" fontWeight="bold" sx={{ color: "w.main" }}>
               {number}
             </Typography>
             <Box component="img" alt="wave" src={wave} />
-            <Typography variant="h6" sx={{ color: "white" }}>
+            <Typography variant="h6" sx={{ color: "w.main" }}>
               Fiesty Menu Items
             </Typography>
           </Box>

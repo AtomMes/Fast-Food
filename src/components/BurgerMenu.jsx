@@ -49,22 +49,22 @@ const BurgerMenu = () => {
       >
         <MenuItem onClick={handleClose}>
           <Link to="/home" style={{ textDecoration: "none" }}>
-            <Button sx={{ color: "gray" }}>Home</Button>
+            <Button sx={{ color: "g.main" }}>Home</Button>
           </Link>
         </MenuItem>
         <MenuItem onClick={handleClose}>
           <Link to="/order" style={{ textDecoration: "none" }}>
-            <Button sx={{ color: "gray" }}>Order</Button>
+            <Button sx={{ color: "g.main" }}>Order</Button>
           </Link>
         </MenuItem>
         <MenuItem onClick={handleClose}>
           <Link to="/company" style={{ textDecoration: "none" }}>
-            <Button sx={{ color: "gray" }}>Company</Button>
+            <Button sx={{ color: "g.main" }}>Company</Button>
           </Link>
         </MenuItem>
         <MenuItem onClick={handleClose}>
           <Link to="/faq" style={{ textDecoration: "none" }}>
-            <Button sx={{ color: "gray" }}>FAQ</Button>
+            <Button sx={{ color: "g.main" }}>FAQ</Button>
           </Link>
         </MenuItem>
       </Menu>

@@ -12,7 +12,7 @@ const TextAndImage = ({
   to,
 }) => {
   return (
-    <Box sx={{ bgcolor: bgcolor ? bgcolor : "white" }}>
+    <Box sx={{ bgcolor: bgcolor ? bgcolor : "w.main" }}>
       <Box
         sx={{ display: "flex", flexDirection: { xs: "column", md: "row" } }}
         alignItems="center"
@@ -65,12 +65,12 @@ const TextAndImage = ({
               color="w"
               sx={{
                 color: "w",
-                backgroundColor: "#35b8be",
+                backgroundColor: "primary.main",
                 width: "160px",
                 fontWeight: "400",
                 minHeight: "52px",
                 "&:hover": {
-                  backgroundColor: "#1a9da3",
+                  backgroundColor: "primary.dark",
                 },
                 whiteSpace: "nowrap",
                 textTransform: "capitalize",

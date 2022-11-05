@@ -89,18 +89,18 @@ const Content = ({ button }) => {
           sx={{
             textTransform: "capitalize",
             color: "w",
-            backgroundColor: "#35b8be",
+            backgroundColor: "primary.main",
             fontWeight: "400",
             minHeight: "52px",
             "&:hover": {
-              backgroundColor: "#1a9da3",
+              backgroundColor: "primary.dark",
             },
             whiteSpace: "nowrap",
             margin: "50px auto",
           }}
           endIcon={<KeyboardArrowRightIcon />}
         >
-          <Link to="/order" style={{ textDecoration: "none", color: "white" }}>
+          <Link to="/order" style={{ textDecoration: "none", color: "w.main" }}>
             {button}
           </Link>
         </Button>

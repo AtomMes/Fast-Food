@@ -25,7 +25,7 @@ const FW = () => {
       />
       <Box
         sx={{
-          bgcolor: "#35b8be",
+          bgcolor: "primary.main",
           width: {
             xs: "100%",
             md: "49%",
@@ -39,7 +39,7 @@ const FW = () => {
       >
         <Typography
           marginBottom="40px"
-          sx={{ color: "white" }}
+          sx={{ color: "w.main" }}
           fontWeight="bold"
           variant="h2"
         >
@@ -51,7 +51,7 @@ const FW = () => {
             size="large"
             variant="contained"
             sx={{
-              color: "#35b8be",
+              color: "primary.main",
               height: "60px",
               width: "150px",
               textTransform: "unset",

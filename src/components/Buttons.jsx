@@ -27,15 +27,15 @@ const Buttons = ({ buttons, handleClick }) => {
           color="b"
           sx={{
             textTransform: "capitalize",
-            color: button.isSelected ? "white" : "black",
-            backgroundColor: button.isSelected && "#35b8be",
+            color: button.isSelected ? "w.main" : "b.main",
+            backgroundColor: button.isSelected && "primary.main",
             width: { xs: "40%", sm: "20%" },
             fontWeight: "400",
             padding: "9px 45px",
             margin: "15px",
             minHeight: "52px",
             "&:hover": {
-              backgroundColor: button.isSelected && "#1a9da3",
+              backgroundColor: button.isSelected && "primary.dark",
             },
             whiteSpace: "nowrap",
           }}
