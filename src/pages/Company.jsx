@@ -21,7 +21,7 @@ const Company = () => {
   }, []);
 
   return (
-    <Box>
+<Box >
       <Box
         component="img"
         src={fixedImage}
@@ -61,11 +61,11 @@ const Company = () => {
               marginBottom: { xs: "20px", md: "0" },
             }}
           >
-            <Typography variant="h1" fontWeight="bold" sx={{ color: "w.main" }}>
+            <Typography variant="h1" fontWeight="bold" sx={{ color: "white" }}>
               {number}
             </Typography>
             <Box component="img" alt="wave" src={wave} />
-            <Typography variant="h6" sx={{ color: "w.main" }}>
+            <Typography variant="h6" sx={{ color: "white" }}>
               Fiesty Menu Items
             </Typography>
           </Box>

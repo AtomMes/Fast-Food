@@ -54,7 +54,7 @@ const TextAndImage = ({
           <Typography
             variant="body1"
             marginBottom="20px"
-            sx={{ textAlign: { xs: "center", md: "start" } }}
+            sx={{ textAlign: { xs: "center", md: "start" } ,color:'g.main' }}
             className="animate__animated animate__fadeIn"
           >
             {subtitle}
@@ -62,9 +62,8 @@ const TextAndImage = ({
           <Link to={to} style={{ textDecoration: "none" }}>
             <Button
               variant="outlined"
-              color="w"
               sx={{
-                color: "w",
+                color:"white",
                 backgroundColor: "primary.main",
                 width: "160px",
                 fontWeight: "400",

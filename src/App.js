@@ -1,4 +1,5 @@
-import "./App.css";
+import React from "react";
+import "./LightMode.css";
 import Banner from "./components/Banner";
 import Navbar from "./components/Navbar";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -10,36 +11,68 @@ import FAQ from "./pages/FAQ";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
 import { Box } from "@mui/material";
+import { useSelector } from "react-redux";
 
-
-
-export const theme = createTheme({
+export const LightTheme = createTheme({
   palette: {
     primary: {
       main: "#35b8be",
     },
     w: {
       main: "#ffffff",
+      light: "#f7f7f7",
     },
     b: {
       main: "#000",
     },
-    g:{
-      main:"#808080",
-      light:'#dcdcdc'
+    g: {
+      main: "#808080",
+      light: "#dcdcdc",
     },
-    lig:{
-      main:'#f5fbfc'
-    }
+    lig: {
+      main: "#f5fbfc",
+    },
+    ht: {
+      main: "#000",
+    },
+  },
+});
+
+export const DarkTheme = createTheme({
+  palette: {
+    primary: {
+      main: "#35b8be",
+    },
+    w: {
+      main: "#000130",
+      light: "#01033b",
+    },
+    b: {
+      main: "#000",
+    },
+    g: {
+      main: "#808080",
+      light: "#dcdcdc",
+    },
+    lig: {
+      main: "#01033b",
+    },
+    ht: {
+      main: "#e8e8e8",
+    },
   },
 });
 
 function App() {
+  const { items } = useSelector((state) => state.itemsSlice);
+
+  const [theme, setTheme] = React.useState(LightTheme);
+
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
         <Banner />
-        <Navbar />
+        <Navbar setTheme={setTheme} theme={theme} DarkTheme={DarkTheme} LightTheme={LightTheme} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/order" element={<Order />} />

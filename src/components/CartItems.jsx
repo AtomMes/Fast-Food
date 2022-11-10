@@ -25,8 +25,8 @@ const CartItems = ({ items }) => {
             margin="20px 20px 20px 0"
           />
           <Box flex="1">
-            <Typography>{item.name}</Typography>
-            <Typography>$ {item.price}.00 USD</Typography>
+            <Typography color='ht.main' >{item.name}</Typography>
+            <Typography color='ht.main' >$ {item.price}.00 USD</Typography>
             <Button onClick={() => dispatch(removeFromCart(item.id))}>
               Remove
             </Button>
@@ -39,8 +39,8 @@ const CartItems = ({ items }) => {
               alignItems="center"
               width="30px"
               height="30px"
-              bgcolor="primary"
-              color="w.main"
+              bgcolor="primary.main"
+              color="white"
               borderRadius="50%"
             >
               {item.count ? item.count : 0}
@@ -57,7 +57,7 @@ const CartItems = ({ items }) => {
                 size="small"
                 sx={{
                   width: "20px",
-                  color: "w.main",
+                  color: "white",
                   padding: "5px",
                   textAlign: "center",
                   minWidth: "0px",
@@ -77,7 +77,7 @@ const CartItems = ({ items }) => {
                 size="small"
                 sx={{
                   width: "20px",
-                  color: "w.main",
+                  color: "white",
                   padding: "5px",
                   textAlign: "center",
                   minWidth: "0px",

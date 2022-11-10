@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setItems } from "../redux/itemsSlice";
 import axios from "axios";
 
-export const Navbar = ({ theme }) => {
+export const Navbar = ({ setTheme, theme, LightTheme, DarkTheme }) => {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
   const dispatch = useDispatch();
   const { items } = useSelector((state) => state.itemsSlice);
@@ -91,6 +91,13 @@ export const Navbar = ({ theme }) => {
                 display: { xs: "none", sm: "flex" },
               }}
             >
+              <Button
+                onClick={() =>
+                  setTheme(theme == LightTheme ? DarkTheme: LightTheme)
+                }
+              >
+                Change Theme
+              </Button>
               {navigationButtons.map((nav, i) => (
                 <Link to={nav.to} key={i} style={{ textDecoration: "none" }}>
                   <Button sx={{ color: "g.main", fontWeight: "400" }}>
@@ -105,23 +112,16 @@ export const Navbar = ({ theme }) => {
                 setIsDrawerOpen(true);
               }}
             >
-              <Badge
-                badgeContent={cartItems.length}
-                showZero
-                color="w"
-                fontWeight="bold"
-              >
-                <ShoppingCartIcon
-                  color="w"
-                  sx={{
-                    bgcolor: "primary.main",
-                    width: "55px",
-                    height: "55px",
-                    padding: "18px",
-                    borderRadius: "8px",
-                  }}
-                />
-              </Badge>
+              <ShoppingCartIcon
+                sx={{
+                  color: "white",
+                  bgcolor: "primary.main",
+                  width: "55px",
+                  height: "55px",
+                  padding: "18px",
+                  borderRadius: "8px",
+                }}
+              />
             </Button>
           </Stack>
         </Toolbar>

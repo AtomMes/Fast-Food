@@ -8,9 +8,8 @@ const FAQ = () => {
     window.scrollTo(0, 0);
   }, []);
 
-
   return (
-    <Box>
+  <Box sx={{ backgroundColor: "w.main" }}>
       <Header text1="Frequently Asked " text2="Questions" />
       <Box className="animate__animated animate__fadeIn">
         <Questions />

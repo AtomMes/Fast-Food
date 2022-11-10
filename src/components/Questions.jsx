@@ -26,9 +26,10 @@ const Questions = () => {
   }
 
   return (
-    <Box maxWidth="1200px" width="100%" margin="100px auto">
+    <Box maxWidth="1200px" width="100%" margin="100px auto 0" paddingBottom='100px'>
       {questions.map((question, i) => (
         <Accordion
+      sx={{backgroundColor:'lig.main'}}
           key={i}
           expanded={expanded === i}
           onClick={() => expand(i)}
@@ -42,7 +43,7 @@ const Questions = () => {
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>
+            <Typography sx={{color:'ht.main'}} >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui modi
               nihil maiores hic iusto suscipit fuga necessitatibus reprehenderit
               voluptate, sit tenetur facere cupiditate vero, optio asperiores

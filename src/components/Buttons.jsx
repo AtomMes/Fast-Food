@@ -24,10 +24,9 @@ const Buttons = ({ buttons, handleClick }) => {
         <Button
           key={button.id}
           variant={!button.isSelected && "outlined"}
-          color="b"
           sx={{
             textTransform: "capitalize",
-            color: button.isSelected ? "w.main" : "b.main",
+  color: button.isSelected ? "white" : "ht.main",
             backgroundColor: button.isSelected && "primary.main",
             width: { xs: "40%", sm: "20%" },
             fontWeight: "400",

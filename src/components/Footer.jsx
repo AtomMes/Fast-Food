@@ -89,7 +89,7 @@ const Footer = () => {
             </IconButton>
             <Typography
               variant="subtitle1"
-              sx={{ marginTop: "20px", marginBottom: "30px" }}
+              sx={{ marginTop: "20px", marginBottom: "30px", color: "ht.main" }}
             >
               Takeaway & Delivery template <br /> for small - medium businesses.
             </Typography>
@@ -107,7 +107,7 @@ const Footer = () => {
               {contacts.map((contact, i) => (
                 <a key={i} href={contact.to} style={{ textDecoration: "none" }}>
                   <Typography sx={{ fontWeight: "400", marginBottom: "20px" }}>
-                    <Button color="b">{contact.text}</Button>
+                    <Button>{contact.text}</Button>
                   </Typography>
                 </a>
               ))}
@@ -120,11 +120,11 @@ const Footer = () => {
                 alignItems: "center",
                 width: "200px",
               }}
-            >
+          >
               {navigationButtons.map((nav, i) => (
                 <Link key={i} to={nav.to} style={{ textDecoration: "none" }}>
                   <Typography sx={{ fontWeight: "400", marginBottom: "20px" }}>
-                    <Button color="b">{nav.text}</Button>
+                    <Button>{nav.text}</Button>
                   </Typography>
                 </Link>
               ))}
@@ -135,20 +135,20 @@ const Footer = () => {
           sx={{
             padding: "20px 0 20px",
             borderTop: "1px solid",
-            borderTopColor:'g.light',
+            borderTopColor: "g.light",
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
           }}
         >
-          <Typography>Built by Atom</Typography>
+          <Typography sx={{ color: "ht.main" }}>Built by Atom</Typography>
           <Box display="flex" sx={{ gap: "10px" }}>
             {socNet.map((net, i) => (
               <a key={i} href={net.to} style={{ textDecoration: "none" }}>
                 <Button
                   variant="outlined"
-                  color="b"
                   sx={{
+                    color: "ht.main",
                     width: "40px",
                     height: "40px",
                     borderRadius: "100%",
@@ -158,6 +158,8 @@ const Footer = () => {
                     minWidth: 0,
                     alignItems: "center",
                     justifyContent: "center",
+                    paddingBottom: "2px",
+                    paddingLeft: "2px",
                   }}
                 >
                   {net.icon}

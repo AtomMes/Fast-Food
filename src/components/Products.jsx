@@ -60,15 +60,15 @@ const Products = ({ food }) => {
                 marginBottom: "9px",
               }}
             >
-              <Typography variant="h6">{item.name}</Typography>
+              <Typography variant="h6" sx={{color:'ht.main'}} >{item.name}</Typography>
               <Typography color="primary">$ {item.price}.00 USD</Typography>
             </Box>
-            <Typography marginBottom="8px">{item.description}</Typography>
+        <Typography marginBottom="8px" sx={{color:'ht.main'}} >{item.description}</Typography>
             <Box display='flex'>
               <Button
                 variant="contained"
                 sx={{
-                  color: "w.main",
+                  color: "white",
                   textTransform: "capitalize",
                   whiteSpace: "nowrap",
                   height: "40px",
@@ -86,7 +86,7 @@ const Products = ({ food }) => {
                     height="25px"
                     fontSize="14px"
                     paddingTop="3px"
-                    bgcolor="w.main"
+                    bgcolor="white"
                     color="primary.main"
                     borderRadius="50%"
                   >

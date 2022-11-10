@@ -26,6 +26,7 @@ const Header = ({ text1, text2, text3 }) => {
             fontWeight: "700",
             margin: "20 auto",
             maxWidth: "700px",
+            color:'ht.main'
           }}
         >
           {text1 && text1}

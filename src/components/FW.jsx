@@ -10,7 +10,7 @@ const FW = () => {
       justifyContent="space-around"
       sx={{ flexDirection: { xs: "column", md: "row" } }}
       maxWidth="1920px"
-      margin="80px auto"
+    margin="80px auto 0"
     >
       <Box
         component="img"
@@ -47,10 +47,10 @@ const FW = () => {
         </Typography>
         <Link to="/order" style={{ textDecoration: "none" }}>
           <Button
-            color="w"
             size="large"
             variant="contained"
             sx={{
+              background:"white",
               color: "primary.main",
               height: "60px",
               width: "150px",

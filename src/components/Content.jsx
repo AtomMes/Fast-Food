@@ -78,6 +78,7 @@ const Content = ({ button }) => {
         maxWidth: "1200px",
         justifyContent: "space-between",
         margin: "0 auto",
+        backgroundColor:'w.main'
       }}
     >
       <Buttons buttons={buttons} handleClick={handleClick} />
@@ -85,10 +86,9 @@ const Content = ({ button }) => {
       {button && (
         <Button
           variant="outlined"
-          color="w"
           sx={{
             textTransform: "capitalize",
-            color: "w",
+            color: "white",
             backgroundColor: "primary.main",
             fontWeight: "400",
             minHeight: "52px",
@@ -100,8 +100,8 @@ const Content = ({ button }) => {
           }}
           endIcon={<KeyboardArrowRightIcon />}
         >
-          <Link to="/order" style={{ textDecoration: "none", color: "w.main" }}>
-            {button}
+          <Link to="/order" style={{ textDecoration: "none", color:'white' }}>
+            {button} 
           </Link>
         </Button>
       )}

@@ -19,6 +19,7 @@ const FullProduct = ({ item, text1, text2 }) => {
       display="flex"
       justifyContent="space-between"
       sx={{
+        backgroundColor: "w.main",
         flexDirection: {
           xs: "column",
           lg: "row",
@@ -42,7 +43,7 @@ const FullProduct = ({ item, text1, text2 }) => {
         gap={3}
         width="95%"
         padding="25px 0"
-        margin='0 auto'
+        margin="0 auto"
       >
         <Typography variant="h3" fontWeight="bold">
           {item.name}
@@ -56,7 +57,7 @@ const FullProduct = ({ item, text1, text2 }) => {
           gap={1}
           sx={{
             borderTop: "0.5px solid",
-            borderTopColor:'primary.light',
+            borderTopColor: "primary.light",
             padding: "27px 0",
           }}
         >
@@ -71,14 +72,14 @@ const FullProduct = ({ item, text1, text2 }) => {
           sx={{
             display: "flex",
             borderBottom: "0.5px solid ",
-            borderBottomColor:'primary.light',
+            borderBottomColor: "primary.light",
             padding: "27px 0",
           }}
         >
           <Button
             variant="contained"
             sx={{
-              color: "w.main",
+              color: "white",
               textTransform: "capitalize",
               whiteSpace: "nowrap",
               height: "40px",

@@ -35,7 +35,7 @@ const Product = () => {
   }
 
   return (
-    <Box>
+    <Box  sx={{ backgroundColor: "w.main" }} >
       <FullProduct item={item} text1={text1} text2={text2} />
       <Tabs text1={text1} text2={text2} />
       <Typography

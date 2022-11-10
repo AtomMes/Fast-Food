@@ -7,8 +7,14 @@ import step3 from "../images/step3.png";
 const HowItWorks = () => {
   return (
     <>
-      <Box width="100%" maxWidth="1200px" margin="100px auto"  >
-        <Typography color="primary" variant="h4" fontWeight="bold" textAlign='center' marginBottom='50px' >
+      <Box width="100%" maxWidth="1200px" margin="100px auto">
+        <Typography
+          color="primary"
+          variant="h4"
+          fontWeight="bold"
+          textAlign="center"
+          marginBottom="50px"
+        >
           How It Works
         </Typography>
         <Box
@@ -24,11 +30,26 @@ const HowItWorks = () => {
             flexDirection="column"
             marginBottom="35px"
           >
-            <Box component="img" alt="img" marginBottom="40px" src={step1} />
-            <Typography variant="h6" textAlign="center">
+            <Box
+              component="img"
+              width="100%"
+              alt="img"
+              marginBottom="40px"
+              src={step1}
+            />
+            <Typography
+              variant="h6"
+              textAlign="center"
+              sx={{ color: "ht.main" }}
+              marginBottom='10px'
+            >
               Adapt your menu items
             </Typography>
-            <Typography color="text.secondary" textAlign="center">
+            <Typography
+              color="text.secondary"
+              textAlign="center"
+              sx={{ color: "ht.main" }}
+            >
               Easily adapt your menu using the webflow CMS and allow customers
               to browse your items.
             </Typography>
@@ -40,11 +61,27 @@ const HowItWorks = () => {
             flexDirection="column"
             marginBottom="35px"
           >
-            <Box component="img" alt="img" marginBottom="40px" src={step2} />
-            <Typography variant="h6" textAlign="center">
+            <Box
+              component="img"
+              width="100%"
+              alt="img"
+              marginBottom="40px"
+              src={step2}
+            />
+            <Typography
+              variant="h6"
+              textAlign="center"
+              sx={{ color: "ht.main" }}
+              marginBottom='10px'
+
+            >
               Accept online orders & takeout
             </Typography>
-            <Typography color="text.secondary" textAlign="center">
+            <Typography
+              color="text.secondary"
+              textAlign="center"
+              sx={{ color: "ht.main" }}
+            >
               Let your customers order and pay via the powerful ecommerce
               system, or simple let them call your store.
             </Typography>
@@ -56,11 +93,27 @@ const HowItWorks = () => {
             flexDirection="column"
             marginBottom="35px"
           >
-            <Box component="img" alt="img" marginBottom="40px" src={step3} />
-            <Typography variant="h6" textAlign="center">
+            <Box
+              component="img"
+              width="100%"
+              alt="img"
+              marginBottom="40px"
+              src={step3}
+            />
+            <Typography
+              variant="h6"
+              textAlign="center"
+              marginBottom='10px'
+              sx={{ color: "ht.main" }}
+
+            >
               Manage delivery or takeout
             </Typography>
-            <Typography color="text.secondary" textAlign="center">
+            <Typography
+              color="text.secondary"
+              textAlign="center"
+              sx={{ color: "ht.main" }}
+            >
               Manage your own logistics and take orders simply through the
               ecommerce system.
             </Typography>

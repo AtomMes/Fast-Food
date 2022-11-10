@@ -1,4 +1,4 @@
-import { Box,  Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
 import TextAndImage from "../components/TextAndImage";
 import HowItWorks from "../components/HowItWorks";
@@ -10,7 +10,6 @@ import Content from "../components/Content";
 import FW from "../components/FW";
 
 const Home = () => {
-
   const header1 = "Beautiful food & takeaway, delivered to your door.";
   const button1 = `Place an Order`;
 
@@ -30,21 +29,21 @@ const Home = () => {
   });
 
   return (
-    <Box>
+  <Box sx={{ backgroundColor: "w.main" }}>
       <TextAndImage
         header={header1}
         subtitle={subtitle}
         button={button1}
         image={home1}
-        to='/order'
+        to="/order"
       />
       <TextAndImage
         header={header2}
         subtitle={subtitle}
         button={button2}
         image={home2}
-        bgcolor="#f5fbfc"
-        to='/company'
+        bgcolor="w.light"
+        to="/company"
       />
       <HowItWorks />
       <Typography
@@ -72,7 +71,7 @@ const Home = () => {
         subtitle={subtitle}
         button={button3}
         image={home3}
-        to='/FAQ'
+        to="/FAQ"
         reverse
       />
       <TextAndImage

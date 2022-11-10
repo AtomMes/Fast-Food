@@ -50,20 +50,30 @@ const Cart = ({ isDrawerOpen, setIsDrawerOpen, items }) => {
   };
 
   return (
-    <Drawer anchor="right"  open={isDrawerOpen} onClose={closeDrawer}>
-      <Box maxWidth='350px' width='100%' height="100%" display="flex" flexDirection="column">
+    <Drawer anchor="right" open={isDrawerOpen} onClose={closeDrawer}>
+      <Box
+        maxWidth="350px"
+        width="100%"
+        height="100%"
+        display="flex"
+        flexDirection="column"
+        sx={{ backgroundColor: "w.main" }}
+      >
         <Box
           display="flex"
           justifyContent="space-between"
           alignItems="center"
           borderBottom="1px solid"
-          borderBottomColor='g.main'
+          borderBottomColor="g.main"
           padding={3}
         >
-          <Typography variant="h4" sx={{ fontWeight: "bold" }}>
+          <Typography
+            variant="h4"
+            sx={{ fontWeight: "bold", color: "ht.main" }}
+          >
             Cart
           </Typography>
-          <Close onClick={closeDrawer} cursor="pointer" />
+          <Close onClick={closeDrawer} cursor="pointer" sx={{color:'ht.main'}} />
         </Box>
         <Box width="100%" flex="1" padding={2} sx={{ overflow: "auto" }}>
           {items.length ? (
@@ -77,16 +87,19 @@ const Cart = ({ isDrawerOpen, setIsDrawerOpen, items }) => {
               height="100%"
               gap={2}
             >
-              <Typography variant="h4" sx={{ fontWeight: "bold" }}>
+              <Typography
+                variant="h4"
+                sx={{ fontWeight: "bold", color: "ht.main" }}
+              >
                 Cart Is Empty
               </Typography>{" "}
               <ProductionQuantityLimitsIcon
-                sx={{ width: "70%", height: "auto" }}
+                sx={{ width: "70%", height: "auto", color: "ht.main" }}
               />
             </Box>
           )}
         </Box>
-        <Box padding={3} borderTop="1px solid" borderTopColor='g.main'>
+        <Box padding={3} borderTop="1px solid" borderTopColor="g.main">
           {items.length ? (
             <>
               <Box
@@ -110,7 +123,7 @@ const Cart = ({ isDrawerOpen, setIsDrawerOpen, items }) => {
           ) : (
             <Link to="/order" style={{ textDecoration: "none" }}>
               <Button
-                sx={{ width: "100%", height: "50px", color: "w.main" }}
+                sx={{ width: "100%", height: "50px", color: "white" }}
                 variant="contained"
                 onClick={closeDrawer}
               >
