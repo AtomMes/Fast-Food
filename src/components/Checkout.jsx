@@ -47,7 +47,7 @@ const Checkout = ({ open, handleClose }) => {
         >
           ✓
         </Typography>
-        <Typography textAlign="center" variant="h4">
+        <Typography textAlign="center" variant="h4" sx={{ color: "primary.main" }}>
           Thank you for your purchase!
         </Typography>
         <Typography color="g.main" textAlign="center" variant="h6">

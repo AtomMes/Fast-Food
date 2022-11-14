@@ -114,7 +114,7 @@ const Cart = ({ isDrawerOpen, setIsDrawerOpen, items }) => {
                 onClick={load}
                 loading={isLoading}
                 loadingPosition="start"
-                sx={{ width: "100%", height: "50px", color: "w.main" }}
+                sx={{ width: "100%", height: "50px", color: "white" }}
                 variant="contained"
               >
                 Continue to checkout

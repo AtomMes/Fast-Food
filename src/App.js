@@ -45,7 +45,6 @@ export const DarkTheme = createTheme({
     },
     w: {
       main: "#000130",
-      light: "#01033b",
     },
     b: {
       main: "#000",
@@ -64,15 +63,25 @@ export const DarkTheme = createTheme({
 });
 
 function App() {
-  const { items } = useSelector((state) => state.itemsSlice);
+  const defaultTheme =
+    (JSON.parse(localStorage.getItem("theme")) && LightTheme) || DarkTheme;
 
-  const [theme, setTheme] = React.useState(LightTheme);
+  const [theme, setTheme] = React.useState(defaultTheme);
+
+  React.useEffect(() => {
+    localStorage.setItem("theme", JSON.stringify(LightTheme == theme));
+  }, [theme]);
 
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
         <Banner />
-        <Navbar setTheme={setTheme} theme={theme} DarkTheme={DarkTheme} LightTheme={LightTheme} />
+        <Navbar
+          setTheme={setTheme}
+          theme={theme}
+          DarkTheme={DarkTheme}
+          LightTheme={LightTheme}
+        />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/order" element={<Order />} />

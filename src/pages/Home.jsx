@@ -2,10 +2,9 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import TextAndImage from "../components/TextAndImage";
 import HowItWorks from "../components/HowItWorks";
-import home1 from "../images/home1.png";
 import home2 from "../images/home2.png";
 import home3 from "../images/home3.png";
-import home4 from "../images/home4.png";
+import home1 from "../images/home4.png";
 import Content from "../components/Content";
 import FW from "../components/FW";
 
@@ -24,12 +23,8 @@ const Home = () => {
 
   const subtitle = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.`;
 
-  React.useEffect(() => {
-    window.scrollTo(0, 0);
-  });
-
   return (
-  <Box sx={{ backgroundColor: "w.main" }}>
+    <Box sx={{ backgroundColor: "w.main" }}>
       <TextAndImage
         header={header1}
         subtitle={subtitle}
@@ -42,7 +37,6 @@ const Home = () => {
         subtitle={subtitle}
         button={button2}
         image={home2}
-        bgcolor="w.light"
         to="/company"
       />
       <HowItWorks />
@@ -73,12 +67,6 @@ const Home = () => {
         image={home3}
         to="/FAQ"
         reverse
-      />
-      <TextAndImage
-        header={header4}
-        subtitle={subtitle}
-        button={button4}
-        image={home4}
       />
       <FW />
     </Box>

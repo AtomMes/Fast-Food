@@ -4,9 +4,6 @@ import Header from "../components/Header";
 import Questions from "../components/Questions";
 
 const FAQ = () => {
-  React.useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
   <Box sx={{ backgroundColor: "w.main" }}>

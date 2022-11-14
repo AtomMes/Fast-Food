@@ -5,9 +5,6 @@ import Checkout from "../components/Checkout";
 import { Box } from "@mui/material";
 
 const Order = () => {
-  React.useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
   <Box  sx={{ backgroundColor: "w.main" }}>

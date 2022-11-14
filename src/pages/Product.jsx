@@ -22,10 +22,6 @@ const Product = () => {
  ‍`;
 
   React.useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  React.useEffect(() => {
     setFood(items.filter((i) => i.types.includes(item.types[1])));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [items]);

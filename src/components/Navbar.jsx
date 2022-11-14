@@ -1,5 +1,13 @@
 import React from "react";
-import { Toolbar, IconButton, Button, Box, Stack, Badge } from "@mui/material";
+import {
+  Toolbar,
+  IconButton,
+  Button,
+  Box,
+  Stack,
+  Badge,
+  Checkbox,
+} from "@mui/material";
 import MainLogo from "../images/mainLogo.svg";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
@@ -8,6 +16,8 @@ import BurgerMenu from "./BurgerMenu";
 import { useDispatch, useSelector } from "react-redux";
 import { setItems } from "../redux/itemsSlice";
 import axios from "axios";
+import Brightness3Icon from "@mui/icons-material/Brightness3";
+import WbSunnyIcon from "@mui/icons-material/WbSunny";
 
 export const Navbar = ({ setTheme, theme, LightTheme, DarkTheme }) => {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
@@ -85,19 +95,20 @@ export const Navbar = ({ setTheme, theme, LightTheme, DarkTheme }) => {
             </Link>
           </Box>
           <Stack direction="row" spacing={2}>
+            <Checkbox
+              icon={<WbSunnyIcon sx={{color:'primary.main'}} />}
+              checkedIcon={<Brightness3Icon />}
+              checked={theme == LightTheme}
+              onChange={() =>
+                setTheme(theme == LightTheme ? DarkTheme : LightTheme)
+              }
+            />
             <Box
               sx={{
                 alignItems: "center",
                 display: { xs: "none", sm: "flex" },
               }}
             >
-              <Button
-                onClick={() =>
-                  setTheme(theme == LightTheme ? DarkTheme: LightTheme)
-                }
-              >
-                Change Theme
-              </Button>
               {navigationButtons.map((nav, i) => (
                 <Link to={nav.to} key={i} style={{ textDecoration: "none" }}>
                   <Button sx={{ color: "g.main", fontWeight: "400" }}>
