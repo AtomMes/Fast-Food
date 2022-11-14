@@ -73,7 +73,11 @@ const Cart = ({ isDrawerOpen, setIsDrawerOpen, items }) => {
           >
             Cart
           </Typography>
-          <Close onClick={closeDrawer} cursor="pointer" sx={{color:'ht.main'}} />
+          <Close
+            onClick={closeDrawer}
+            cursor="pointer"
+            sx={{ color: "ht.main" }}
+          />
         </Box>
         <Box width="100%" flex="1" padding={2} sx={{ overflow: "auto" }}>
           {items.length ? (
@@ -107,8 +111,12 @@ const Cart = ({ isDrawerOpen, setIsDrawerOpen, items }) => {
                 justifyContent="space-between"
                 marginBottom="15px"
               >
-                <Typography variant="h5">Subtotal</Typography>
-                <Typography variant="h5">${totalPrice}.00 USD</Typography>
+                <Typography variant="h5" color="white">
+                  Subtotal
+                </Typography>
+                <Typography variant="h5" color="white">
+                  ${totalPrice}.00 USD
+                </Typography>
               </Box>
               <LoadingButton
                 onClick={load}
