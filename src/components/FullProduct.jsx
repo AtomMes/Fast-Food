@@ -65,7 +65,7 @@ const FullProduct = ({ item, text1, text2 }) => {
           <Typography fontSize="18px" fontWeight={400} sx={{color:'ht.main'}} >
             {text1}
           </Typography>
-          <Typography fontSize="18px" fontWeight={400} sx={{color:'ht.light'}} >
+          <Typography fontSize="18px" fontWeight={400} sx={{color:'ht.main'}} >
             {text2}
           </Typography>
         </Box>
