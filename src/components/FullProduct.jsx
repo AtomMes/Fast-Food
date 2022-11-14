@@ -15,7 +15,8 @@ const FullProduct = ({ item, text1, text2 }) => {
     <Box
       width="100%"
       maxWidth="1200px"
-      margin="100px auto"
+      margin="0 auto"
+      padding='100px 0'
       display="flex"
       justifyContent="space-between"
       sx={{
@@ -45,7 +46,7 @@ const FullProduct = ({ item, text1, text2 }) => {
         padding="25px 0"
         margin="0 auto"
       >
-        <Typography variant="h3" fontWeight="bold">
+        <Typography variant="h3" fontWeight="bold" sx={{color:'ht.main'}} >
           {item.name}
         </Typography>
         <Typography variant="h5" color="primary" fontWeight={500}>
@@ -61,10 +62,10 @@ const FullProduct = ({ item, text1, text2 }) => {
             padding: "27px 0",
           }}
         >
-          <Typography color="text.secondary" fontSize="18px" fontWeight={400}>
+          <Typography fontSize="18px" fontWeight={400} sx={{color:'ht.main'}} >
             {text1}
           </Typography>
-          <Typography color="text.secondary" fontSize="18px" fontWeight={400}>
+          <Typography fontSize="18px" fontWeight={400} sx={{color:'ht.light'}} >
             {text2}
           </Typography>
         </Box>

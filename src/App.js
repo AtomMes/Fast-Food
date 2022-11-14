@@ -20,7 +20,6 @@ export const LightTheme = createTheme({
     },
     w: {
       main: "#ffffff",
-      light: "#f7f7f7",
     },
     b: {
       main: "#000",
