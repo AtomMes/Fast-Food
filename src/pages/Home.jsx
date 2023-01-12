@@ -1,4 +1,4 @@
-import { Box, Rating, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
 import TextAndImage from "../components/TextAndImage";
 import HowItWorks from "../components/HowItWorks";
@@ -6,7 +6,7 @@ import home2 from "../images/home2.png";
 import home3 from "../images/home3.png";
 import home1 from "../images/home4.png";
 import Content from "../components/Content";
-import FW from "../components/FW";
+import BottomBanner from "../components/BottomBanner";
 
 const Home = () => {
   const header1 = "Beautiful food & takeaway, delivered to your door.";
@@ -18,14 +18,10 @@ const Home = () => {
   const header3 = `Order online with our simple checkout.`;
   const button3 = `See our FAQ`;
 
-  const header4 = `Call our store and takeaway when it suits you best.`;
-  const button4 = `Ph +61 233 2333`;
-
   const subtitle = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.`;
 
   return (
     <Box sx={{ backgroundColor: "w.main" }}>
-      <Rating name="read-only" precision={0.1}/>
       <TextAndImage
         header={header1}
         subtitle={subtitle}
@@ -69,7 +65,7 @@ const Home = () => {
         to="/FAQ"
         reverse
       />
-      <FW />
+      <BottomBanner />
     </Box>
   );
 };

@@ -3,7 +3,7 @@ import fixedImage from "../images/fixedImage.jpg";
 import React from "react";
 import { Link } from "react-router-dom";
 
-const FW = () => {
+const BottomBanner = () => {
   return (
     <Box
       display="flex"
@@ -39,7 +39,7 @@ const FW = () => {
       >
         <Typography
           marginBottom="40px"
-          sx={{ color: "w.main" }}
+          sx={{ color: "white" }}
           fontWeight="bold"
           variant="h2"
         >
@@ -57,6 +57,12 @@ const FW = () => {
               textTransform: "unset",
               fontWeight: "400",
               fontSize: "18px",
+              transition:".5s",
+              "&:hover": {
+                backgroundColor: "white",
+                color: "primary.main",
+                transform: "scale(1.1)",
+              },
             }}
           >
             Order Now
@@ -67,4 +73,4 @@ const FW = () => {
   );
 };
 
-export default FW;
+export default BottomBanner;

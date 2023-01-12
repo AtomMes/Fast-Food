@@ -1,9 +1,5 @@
 import { Box, Button } from "@mui/material";
-import { useTheme } from "@mui/material";
-import axios from "axios";
 import React from "react";
-import { setItems } from "../redux/itemsSlice";
-import { useDispatch, useSelector } from "react-redux";
 
 const Buttons = ({ buttons, handleClick }) => {
   return (
@@ -26,7 +22,7 @@ const Buttons = ({ buttons, handleClick }) => {
           variant={!button.isSelected && "outlined"}
           sx={{
             textTransform: "capitalize",
-  color: button.isSelected ? "white" : "ht.main",
+            color: button.isSelected ? "white" : "ht.main",
             backgroundColor: button.isSelected && "primary.main",
             width: { xs: "40%", sm: "20%" },
             fontWeight: "400",

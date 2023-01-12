@@ -11,7 +11,6 @@ import FAQ from "./pages/FAQ";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
 import { Box } from "@mui/material";
-import { useSelector } from "react-redux";
 
 export const LightTheme = createTheme({
   palette: {

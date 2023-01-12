@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter } from "@mui/icons-material";
+import { Facebook, Instagram } from "@mui/icons-material";
 import { Box, Button, IconButton, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -141,7 +141,7 @@ const Footer = () => {
             alignItems: "center",
           }}
         >
-          <Typography sx={{ color: "ht.main" }}>Built by Atom</Typography>
+          <Typography sx={{ color: "ht.main" }}>Built by Artem</Typography>
           <Box display="flex" sx={{ gap: "10px" }}>
             {socNet.map((net, i) => (
               <a key={i} href={net.to} style={{ textDecoration: "none" }}>

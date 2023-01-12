@@ -3,7 +3,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import FullProduct from "../components/FullProduct";
-import FW from "../components/FW";
+import BottomBanner from "../components/BottomBanner";
 import Products from "../components/Products";
 import Tabs from "../components/Tabs";
 
@@ -47,7 +47,7 @@ const Product = () => {
       <Box width="100%" maxWidth="1200px" margin="0 auto">
         <Products food={food} />
       </Box>
-      <FW />
+      <BottomBanner />
     </Box>
   );
 };

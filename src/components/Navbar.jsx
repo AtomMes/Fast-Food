@@ -5,7 +5,6 @@ import {
   Button,
   Box,
   Stack,
-  Badge,
   Checkbox,
 } from "@mui/material";
 import MainLogo from "../images/mainLogo.svg";
@@ -96,7 +95,7 @@ export const Navbar = ({ setTheme, theme, LightTheme, DarkTheme }) => {
           </Box>
           <Stack direction="row" spacing={2}>
             <Checkbox
-              icon={<WbSunnyIcon sx={{color:'primary.main'}} />}
+              icon={<WbSunnyIcon sx={{ color: "primary.main" }} />}
               checkedIcon={<Brightness3Icon />}
               checked={theme == LightTheme}
               onChange={() =>
