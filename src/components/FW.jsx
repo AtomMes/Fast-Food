@@ -10,7 +10,7 @@ const FW = () => {
       justifyContent="space-around"
       sx={{ flexDirection: { xs: "column", md: "row" } }}
       maxWidth="1920px"
-    margin="80px auto 0"
+      margin="80px auto 0"
     >
       <Box
         component="img"
@@ -50,7 +50,7 @@ const FW = () => {
             size="large"
             variant="contained"
             sx={{
-              background:"white",
+              background: "white",
               color: "primary.main",
               height: "60px",
               width: "150px",

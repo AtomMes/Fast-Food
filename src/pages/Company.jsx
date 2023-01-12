@@ -1,4 +1,4 @@
-import { Box, Typography,} from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import freshFoodSvg from "../images/freshFood.png";
 import fixedImage from "../images/fixedImage.jpg";
 import wave from "../images/wave.svg";
@@ -16,9 +16,8 @@ const Company = () => {
   const button = "Learn About Us";
   const image = freshFoodSvg;
 
-
   return (
-<Box >
+    <Box>
       <Box
         component="img"
         src={fixedImage}

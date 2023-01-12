@@ -30,7 +30,7 @@ const contacts = [
   },
   {
     text: "LinkedIn",
-    to: "https://www.linkedin.com/in/artem-mesropyan-27b04a24a/",
+    to: "https://www.linkedin.com/in/artem-mesropyan-45b251257/",
   },
 ];
 

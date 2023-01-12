@@ -25,8 +25,8 @@ const CartItems = ({ items }) => {
             margin="20px 20px 20px 0"
           />
           <Box flex="1">
-            <Typography color='ht.main' >{item.name}</Typography>
-            <Typography color='ht.main' >$ {item.price}.00 USD</Typography>
+            <Typography color="ht.main">{item.name}</Typography>
+            <Typography color="ht.main">$ {item.price}.00 USD</Typography>
             <Button onClick={() => dispatch(removeFromCart(item.id))}>
               Remove
             </Button>

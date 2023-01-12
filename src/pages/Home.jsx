@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Rating, Typography } from "@mui/material";
 import React from "react";
 import TextAndImage from "../components/TextAndImage";
 import HowItWorks from "../components/HowItWorks";
@@ -25,6 +25,7 @@ const Home = () => {
 
   return (
     <Box sx={{ backgroundColor: "w.main" }}>
+      <Rating name="read-only" precision={0.1}/>
       <TextAndImage
         header={header1}
         subtitle={subtitle}
