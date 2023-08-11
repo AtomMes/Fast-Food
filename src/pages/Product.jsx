@@ -10,7 +10,6 @@ import Tabs from "../components/Tabs";
 const Product = () => {
   const { id } = useParams();
   const item = useSelector((state) => state.itemsSlice.items[id]);
-  console.log(item);
   const items = useSelector((state) =>
     state.itemsSlice.items.filter((i) => i.types.includes(item.types[1]))
   );

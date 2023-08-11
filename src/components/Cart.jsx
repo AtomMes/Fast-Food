@@ -111,10 +111,10 @@ const Cart = ({ isDrawerOpen, setIsDrawerOpen, items }) => {
                 justifyContent="space-between"
                 marginBottom="15px"
               >
-                <Typography variant="h5" color="white">
+                <Typography variant="h5" color="ht.main">
                   Subtotal
                 </Typography>
-                <Typography variant="h5" color="white">
+                <Typography variant="h5" color="ht.main">
                   ${totalPrice}.00 USD
                 </Typography>
               </Box>
