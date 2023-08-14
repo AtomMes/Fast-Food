@@ -1,18 +1,10 @@
-import { Facebook, Instagram } from "@mui/icons-material";
+import { AssignmentInd, LinkedIn } from "@mui/icons-material";
 import { Box, Button, IconButton, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 import MainLogo from "../images/mainLogo.svg";
 
-const navigationButtons = [
-  {
-    text: "Home",
-    to: "/home",
-  },
-  {
-    text: "Order",
-    to: "/order",
-  },
+const navigationButtons2 = [
   {
     text: "Company",
     to: "/company",
@@ -22,25 +14,24 @@ const navigationButtons = [
     to: "/faq",
   },
 ];
-
-const contacts = [
+const navigationButtons1 = [
   {
-    text: "GitHub",
-    to: "https://github.com/AtomMes",
+    text: "Home",
+    to: "/home",
   },
   {
-    text: "LinkedIn",
-    to: "https://www.linkedin.com/in/artem-mesropyan-45b251257/",
+    text: "Order",
+    to: "/order",
   },
 ];
 
 const socNet = [
   {
-    icon: <Instagram />,
-    to: "https://www.instagram.com/a.t.m.e.s/",
+    icon: <LinkedIn />,
+    to: "https://linkedin.com/in/artem-mesropyan",
   },
   {
-    icon: <Facebook />,
+    icon: <AssignmentInd />,
     to: "https://www.facebook.com/atom.mesropyan/",
   },
 ];
@@ -51,7 +42,7 @@ const Footer = () => {
       sx={{
         bgcolor: "lig.main",
         width: "100%",
-        paddingTop: "100px",
+        paddingTop: "50px",
       }}
     >
       <Box
@@ -101,10 +92,11 @@ const Footer = () => {
                 flexDirection: "column",
                 marginBottom: "20px",
                 alignItems: "center",
+                justifyContent: "center",
                 width: "200px",
               }}
             >
-              {contacts.map((contact, i) => (
+              {navigationButtons1.map((contact, i) => (
                 <a key={i} href={contact.to} style={{ textDecoration: "none" }}>
                   <Typography sx={{ fontWeight: "400", marginBottom: "20px" }}>
                     <Button>{contact.text}</Button>
@@ -118,10 +110,12 @@ const Footer = () => {
                 flexDirection: "column",
                 marginBottom: "20px",
                 alignItems: "center",
+                justifyContent: "center",
+
                 width: "200px",
               }}
-          >
-              {navigationButtons.map((nav, i) => (
+            >
+              {navigationButtons2.map((nav, i) => (
                 <Link key={i} to={nav.to} style={{ textDecoration: "none" }}>
                   <Typography sx={{ fontWeight: "400", marginBottom: "20px" }}>
                     <Button>{nav.text}</Button>
@@ -148,18 +142,14 @@ const Footer = () => {
                 <Button
                   variant="outlined"
                   sx={{
-                    color: "ht.main",
                     width: "40px",
                     height: "40px",
                     borderRadius: "100%",
+                    borderColor: "primary",
                     display: "flex",
                     padding: 0,
                     minHeight: 0,
                     minWidth: 0,
-                    alignItems: "center",
-                    justifyContent: "center",
-                    paddingBottom: "2px",
-                    paddingLeft: "2px",
                   }}
                 >
                   {net.icon}
