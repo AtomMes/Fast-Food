@@ -32,7 +32,7 @@ const socNet = [
   },
   {
     icon: <AssignmentInd />,
-    to: "https://www.facebook.com/atom.mesropyan/",
+    to: "https://artem-mesropyan-dev.netlify.app",
   },
 ];
 
