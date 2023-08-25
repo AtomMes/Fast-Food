@@ -1,4 +1,4 @@
-import { AssignmentInd, LinkedIn } from "@mui/icons-material";
+import { AssignmentInd, GitHub, LinkedIn } from "@mui/icons-material";
 import { Box, Button, IconButton, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -34,6 +34,10 @@ const socNet = [
     icon: <AssignmentInd />,
     to: "https://artem-mesropyan-dev.netlify.app",
   },
+  {
+    icon: <GitHub />,
+    to: "https://github.com/AtomMes/Fast-Food",
+  },
 ];
 
 const Footer = () => {
@@ -48,6 +52,7 @@ const Footer = () => {
       <Box
         sx={{
           maxWidth: "1200px",
+          paddingX: "20px",
           margin: "0 auto",
         }}
       >

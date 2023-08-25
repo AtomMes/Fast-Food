@@ -11,6 +11,7 @@ const Products = ({ food }) => {
     <Box
       sx={{
         marginTop: "30px",
+        paddingX: "20px",
         display: "flex",
         flexWrap: "wrap",
         justifyContent: "space-between",
@@ -21,8 +22,10 @@ const Products = ({ food }) => {
           key={item.id}
           sx={{
             display: "flex",
+            columnGap: "25px",
             flexDirection: { xs: "column", sm: "row" },
             border: "0.5px solid rgba(53, 184, 190, 0.35)",
+            alignItems: "center",
             borderRadius: "6px",
             width: { xs: "49%", sm: "100%", md: "49%" },
             padding: "25px",
@@ -39,13 +42,13 @@ const Products = ({ food }) => {
               src={item.imageUrl}
               width="130px"
               height="auto"
-              marginRight="25px"
               borderRadius="10px"
             />
           </Link>
           <Box
             sx={{
               width: "100%",
+              height: "100%",
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
@@ -60,11 +63,26 @@ const Products = ({ food }) => {
                 marginBottom: "9px",
               }}
             >
-              <Typography variant="h6" sx={{color:'ht.main'}} >{item.name}</Typography>
+              <Typography variant="h6" sx={{ color: "ht.main" }}>
+                {item.name}
+              </Typography>
               <Typography color="primary">$ {item.price}.00 USD</Typography>
             </Box>
-        <Typography marginBottom="8px" sx={{color:'ht.main'}} >{item.description}</Typography>
-            <Box display='flex'>
+            <Typography
+              marginBottom="8px"
+              sx={{
+                color: "ht.main",
+                textAlign: { xs: "center", sm: "initial" },
+              }}
+            >
+              {item.description}
+            </Typography>
+            <Box
+              display="flex"
+              sx={{
+                justifyContent: { xs: "center", sm: "initial" },
+              }}
+            >
               <Button
                 variant="contained"
                 sx={{
