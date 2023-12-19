@@ -142,7 +142,7 @@ const Footer = () => {
         >
           <Typography sx={{ color: "ht.main" }}>Built by Artem</Typography>
           <Box display="flex" sx={{ gap: "10px" }}>
-            {socNet.map((net, i) => (
+{/*             {socNet.map((net, i) => (
               <a key={i} href={net.to} style={{ textDecoration: "none" }}>
                 <Button
                   variant="outlined"
@@ -160,7 +160,7 @@ const Footer = () => {
                   {net.icon}
                 </Button>
               </a>
-            ))}
+            ))} */}
           </Box>
         </Box>
       </Box>
